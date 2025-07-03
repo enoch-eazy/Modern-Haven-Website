@@ -6,18 +6,18 @@ import hero3 from "./images/hero3.jpg";
 import hero4 from "./images/hero4.jpg";
 import hero5 from "./images/hero5.jpg";
 import hero6 from "./images/hero6.jpg";
-
 import categoryImageshorts from "./images/categoryImageshorts.jpg";
-import categoryImagesshoes from "./images/categoryImagesshoes.jpg";
-import categoryImagessweaters from "./images/categoryImagessweaters.jpg";
-import categoryImagesjerseys from "./images/categoryImagesjerseys.jpg";
-import categoryImagespants from "./images/categoryImagespants.jpg";
-import categoryImagesshirts from "./images/categoryImagesshirts.jpg";
+import categoryImagesshoes from "./images/catgeoryImageshoes.jpg";
+import categoryImagessweaters from "./images/sweater_img.jpg";
+import categoryImagesjerseys from "./images/categoryImagejerseys.jpg";
+import categoryImagespants from "./images/categoryImagepants.jpg";
+import categoryImagesshirts from "./images/categoryImageshirts.jpg";
 import aboutImage from "./images/aboutMen_Img.jpg";
 import testimonialImage1 from "./images/testimonial_Img.jpg";
-import testimonialImage2 from "./images/testimonial_Img2.jpg";
+import testimonialImage2 from "./images/testimonial2_Img.jpg";
 import testimonialImage3 from "./images/testimonial3_Img.jpg";
 import testimonialImage4 from "./images/testimonail4_Img.jpg";
+import man from "./images/man.svg"
 
 
 export default {
@@ -39,5 +39,6 @@ export default {
     testimonialImage1,
     testimonialImage2,
     testimonialImage3,
-    testimonialImage4
+    testimonialImage4,
+    man
 }

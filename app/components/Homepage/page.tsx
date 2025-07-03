@@ -1,9 +1,11 @@
-import { sectionPadding } from "@/app/styles/styles";
+"use client"
+
 import HomeNavbar from "./HomeNavbar";
 import HeroSection from "./HeroSection";
 import Category from "./Category";
 import AboutSection from "./AboutSection";
 import Testimonial from "./Testimonial";
+import HeroBanner from "../shared/HeroBanner";
 
 export default function HomePage() {
     return (
@@ -13,6 +15,7 @@ export default function HomePage() {
             <AboutSection />
             <Category />
             <Testimonial />
+            <HeroBanner />
         </main>
     )
 }

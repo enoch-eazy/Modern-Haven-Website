@@ -5,7 +5,11 @@ import React from "react";
 const AboutSection: React.FC = () => {
     return (
         <section>
-            <AboutCard sectionTitle="About Men's fashion" image={images.aboutImage} paragraph1="Men’s fashion is a timeless blend of confidence, function, and style. From tailored suits to relaxed streetwear, modern men seek versatility in their wardrobes—an ability to move seamlessly from the boardroom to the weekend without compromising comfort or appearance. Whether you're embracing minimalism or layering textures and tones, today’s fashion empowers men to express their identity with poise." paragraph2="At Modern Haven, we believe fashion is not just about trends—it’s about personal presence and everyday excellence. Our curated collection brings together classic silhouettes, contemporary cuts, and smart essentials that speak to every man’s lifestyle. From premium shirts to rugged boots, casual joggers to sophisticated watches, we deliver the look that lets you lead with style—wherever life takes you." />
+            <AboutCard 
+            sectionTitle="About Modern Haven" 
+            image={images.AboutModern_Img} 
+            paragraph1="Modern Haven is where fashion meets lifestyle for the modern family. We bring together curated collections of men’s and women’s wear, stylish accessories, and fun gadgets for kids and teens—all in one seamless shopping experience. Whether you're upgrading your wardrobe, finding the perfect gift, or discovering the latest tech toys, Modern Haven helps you shop smart, live stylishly, and enjoy life’s little moments." 
+            paragraph2="Our passion is creating a space where style, quality, and family values come together effortlessly. From timeless fashion essentials to playful gadgets, we believe shopping should be easy, inspiring, and inclusive. Welcome to Modern Haven — your trusted destination for fashion and lifestyle for every member of the family." />
         </section>
     )
 }

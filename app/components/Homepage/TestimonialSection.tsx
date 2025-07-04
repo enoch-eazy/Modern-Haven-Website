@@ -39,7 +39,6 @@ const TestimonialSection: React.FC<TestimonialProps> = ({sectionTitle, testimoni
                         <Image 
                         src={testimonials[currentTestimonial].image} 
                         alt={testimonials[currentTestimonial].name} 
-                        width={100} height={100} 
                         priority
                         quality={100}
                         className="w-[400px] h-[450px] object-cover object-top rounded-xl" />

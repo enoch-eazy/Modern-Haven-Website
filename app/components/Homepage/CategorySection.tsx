@@ -17,9 +17,8 @@ const CategorySection: React.FC<CategoryProps> = ({sectionTitle, categoryItem}) 
                             src={item.image} 
                             alt={item.Item}
                             priority
-                            quality={100}
-                            width={100} height={100} 
-                            className="w-full h-[250px] object-cover rounded-t-xl" />
+                            quality={100} 
+                            className="w-full h-[250px] object-cover object-top rounded-t-xl" />
                             <div 
                             className="flex flex-col gap-3 items-center justify-center w-full">
                                 <p 

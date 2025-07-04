@@ -13,6 +13,32 @@ export interface TestimonialProps {
     testimonials: TestimonialItem[];
 }
 
+export const TestimonialsCustomers: TestimonialItem[] = [
+    {
+        id: 1,
+        name: "Daniel Otunla",
+        testimonial: "Love this shirt! Fits perfectly and the quality is great. I'll definitely be buying more from this store.",
+        image: images.testimonialImage1
+    },
+    {
+        id: 2,
+        name: "Anita Okafor",
+        testimonial: "The dresses are stunning! I wore mine to a wedding and got so many compliments. Quality and style in one place.",
+        image: images.TestimonialImage2
+    },
+    {
+        id: 3,
+        name: "Caleb Okereke",
+        testimonial: "Finally, a store that gets it. I bought shirts for myself, sneakers for my wife, and a Nintendo for my son—all in one place",
+        image: images.testimonialImage3
+    },
+    {
+        id: 4,
+        name: "Samuel Edet",
+        testimonial: "It's great to find quality kids’ fashion and gadgets in one place. My boys won’t put down their new PlayStation!",
+        image: images.teenTestimony2
+    }
+]
 export const TestimonialsMale: TestimonialItem[] = [
     {
         id: 1,
@@ -88,6 +114,6 @@ export const TestimonialsKids: TestimonialItem[] = [
         id: 4,
         name: "Samuel Edet",
         testimonial: "It's great to find quality kids’ fashion and gadgets in one place. My boys won’t put down their new PlayStation!",
-        image: images.teenTestimony1
+        image: images.teenTestimony2
     }
 ]

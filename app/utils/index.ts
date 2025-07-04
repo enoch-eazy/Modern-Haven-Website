@@ -1,3 +1,4 @@
+import images from "@/public/images"
 import { Icons } from "../ui/icons"
 
 export const Otherpages = [
@@ -16,6 +17,21 @@ export const Otherpages = [
     {
         name: "Shop",
         link: "/shop",
+        Icons: Icons.Dropdown({ className: "w-6 h-6" }),
+        submenu: [
+            {
+                name: "Men",
+                link: "/men",
+            },
+            {
+                name: "Women",
+                link: "/women",
+            },
+            {
+                name: "Kids & Teens",
+                link: "/kids",
+            },
+        ]
     }
 ]
 
@@ -57,5 +73,23 @@ export const Socials = [
         name: "LinkedIn",
         href: "https://www.linkedin.com/in/enoch-jesulana",
         icons: Icons.Linkedin({ className: "w-10 h-10" })
+    }
+]
+
+export const NewSection = [
+    {
+        name: "New Arrivals",
+        button: "SHOP THE LATEST",
+        image: images.NewArrivals_Img,
+    },
+    {
+        name: "Best-Sellers",
+        button: "SHOP YOUR FAVORITES",
+        image: images.BestSellers_Img,
+    },
+    {
+        name: "Trending Now",
+        button: "SHOP THE TRENDS",
+        image: images.Trending_Img,
     }
 ]

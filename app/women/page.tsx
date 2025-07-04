@@ -1,5 +1,5 @@
 "use client"
-import HomeNavbar from "../components/Homepage/HomeNavbar";
+import HomeNavbar from "../components/shared/HomeNavbar";
 import AboutCard from "../components/Homepage/AboutCard";
 import images from "@/public/images";
 import HeroSection from "../components/shared/HeroSection";

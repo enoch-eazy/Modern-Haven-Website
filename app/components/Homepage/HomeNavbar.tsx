@@ -18,7 +18,6 @@ export default function HomeNavbar() {
             name: "Kids",
             href: "/kids"
         }
-        
     ]
     return (
         <section className={`bg-[#0F2B22] text-gray-500 mt-18`}>
@@ -36,9 +35,7 @@ export default function HomeNavbar() {
                         </Link>
                         </div>
                     ))}
-                </div>
-               
-                
+                </div>  
             </div>
         </section>
     )

@@ -1,3 +1,5 @@
+import { MdOutlineArrowRightAlt } from "react-icons/md";
+
 interface IconProps extends React.HTMLAttributes<SVGElement> {
     fill?: string;
     width?: number;
@@ -390,5 +392,7 @@ export const Icons = {
         </svg>
 
     ),
-
+    Right: (props: IconProps) => (
+        <MdOutlineArrowRightAlt {...props} />
+    )
 }

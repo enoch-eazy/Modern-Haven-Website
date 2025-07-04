@@ -1,6 +1,7 @@
 "use client"
 
 import { sectionPadding } from "@/app/styles/styles"
+import { Otherpages } from "@/app/utils"
 // import { ApplicationRoutes } from "@/app/components/constant/applicationRoutes"
 import images from "@/public/images"
 import Image from "next/image"
@@ -8,21 +9,7 @@ import Link from "next/link"
 import { useState } from "react"
 export default function Navbar() {
     const [active, isActive] = useState("/")
-    const NavItem = [
-        {
-            name: "Home",
-            href: "/"
-        },
-        {
-            name: "About",
-            href: "/about"
-        },
-        {
-            name: "Contact",
-            href: "/contact"
-        },   
-    ]
-
+   
     const AccountItem = [
         {
             name: "Login",
@@ -40,9 +27,9 @@ export default function Navbar() {
             <div className="flex justify-between items-center">
                 <Image src={images.logo} alt="logo" width={100} height={100} className="w-30 h-18 object-cover" />
                 <ul className="flex gap-8">
-                    {NavItem.map((item, index) => (
-                        <li key={index} className={`transition-all duration-300 hover:text-[#FFD700] cursor-pointer ${active === item.href ? "font-bold text-[#FFD700]" : ""}`}>
-                            <Link href={item.href} onClick={() => isActive(item.href)}>
+                    {Otherpages.map((item, index) => (
+                        <li key={index} className={`transition-all duration-300 hover:text-[#FFD700] cursor-pointer ${active === item.link ? "font-bold text-[#FFD700]" : ""}`}>
+                            <Link href={item.link} onClick={() => isActive(item.link)}>
                             {item.name}
                             </Link>
                         </li>

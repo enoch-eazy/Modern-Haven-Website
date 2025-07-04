@@ -1,5 +1,15 @@
 import logo from "./images/Logo.png";
 import heroImage from "./images/heroSectionImage.jpg";
+import Accessory from "./images/accesory.jpg";
+import Games from "./images/games&toys.jpg";
+import Sports from "./images/sports&fitness.jpg";
+import MenFashion from "./images/menFashion.jpg";
+import AboutModern_Img from "./images/aboutModern_Img.jpg";
+import NewArrivals_Img from "./images/newArrivals_Img.jpg";
+import BestSellers_Img from "./images/bestSellers_Img.jpg";
+import Trending_Img from "./images/trending_Img.jpg";
+
+// Men Section
 import hero from "./images/hero.jpg";
 import hero2 from "./images/hero2.jpg";
 import hero3 from "./images/hero3.jpg";
@@ -18,7 +28,8 @@ import testimonialImage1 from "./images/testimonial_Img.jpg";
 import testimonialImage2 from "./images/testimonial2_Img.jpg";
 import testimonialImage3 from "./images/testimonial3_Img.jpg";
 import testimonialImage4 from "./images/testimonail4_Img.jpg";
-import man from "./images/man.svg"
+import man from "./images/man.svg";
+
 
 // Kid Section 
 import Playstation from "./images/playstation_Img.jpg";
@@ -36,11 +47,14 @@ import teenTestimony4 from "./images/teenTestimony4.jpg";
 
 // Women Section 
 import WomenFashion from "./images/womenfashion_Img.jpg";
-import TestimonialImage1 from "./images/testimonial_Img.jpg";
-import TestimonialImage2 from "./images/testimonial2_Img.jpg";
-import TestimonialImage3 from "./images/testimonial3_Img.jpg";
-import TestimonialImage4 from "./images/testimonail4_Img.jpg";
+import TestimonialImage1 from "./images/testimonialWomen_Img1.jpg";
+import TestimonialImage2 from "./images/testimonialWomen_Img2.jpg";
+import TestimonialImage3 from "./images/testimonialWomen_Img3.jpg";
+import TestimonialImage4 from "./images/teenTestimony4.jpg";
 
+// Shop Section
+import Shop_Img from "./images/shop_Img.jpg";
+import ShopItem1 from "./images/shopItem1.jpg";
 
 
 export default {
@@ -81,5 +95,15 @@ export default {
     teenTestimony1,
     teenTestimony2,
     teenTestimony3,
-    teenTestimony4
+    teenTestimony4,
+    Accessory,
+    Games,
+    Sports,
+    MenFashion,
+    AboutModern_Img,
+    NewArrivals_Img,
+    Shop_Img,
+    ShopItem1,
+    BestSellers_Img,
+    Trending_Img
 }

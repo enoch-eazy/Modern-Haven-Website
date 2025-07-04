@@ -1,6 +1,6 @@
 "use client"
 
-import HomeNavbar from "../components/Homepage/HomeNavbar"
+import HomeNavbar from "../components/shared/HomeNavbar"
 import HeroSection from "../components/shared/HeroSection"
 import AboutSection from "../components/Homepage/AboutSection"
 import Category from "../components/Homepage/Category"

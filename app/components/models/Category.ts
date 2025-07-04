@@ -1,5 +1,38 @@
 import images from "@/public/images";
 import { StaticImageData } from "next/image";
+
+export const CategoryItem = [
+    {
+        image: images.MenFashion,
+        Item: "MEN FASHION",
+        href: "/shop/men"
+    },
+    {
+        image: images.WomenFashion,
+        Item: "WOMEN FASHION",
+        href: "/shop/women"
+    },
+    {
+        image: images.aboutKid_Img,
+        Item: "KIDS & TEENS FASHION",
+        href: "/shop/kids"
+    },
+    {
+        image: images.Sports,
+        Item: "SPORTS & FITNESS",
+        href: "/shop/men"
+    },
+    {
+        image: images.Accessory,
+        Item: "ACCESSORIES",
+        href: "/shop/women"
+    },
+    {
+        image: images.Games,
+        Item: "GAMES & TOYS",
+        href: "/shop/kids"
+    }
+];
 export const CategoryItemMen = [
     {
         image: images.categoryImagesshirts,
@@ -23,7 +56,7 @@ export const CategoryItemMen = [
     },
     {
         image: images.categoryImagesshoes,
-        Item: "/SHOES",
+        Item: "SHOES",
         href: "/shop/men/shoes"
     },
     {

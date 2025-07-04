@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Enoch's Portfolio",
-  description: "Enoch's Portfolio",
+  title: "Modern Haven Website",
+  description: "Modern Haven is your one-stop shop for stylish men’s and women’s fashion, plus gadgets and trendy wear for kids & teens — all in one place for the modern family",
 };
 
 export default function RootLayout({

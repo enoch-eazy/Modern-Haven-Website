@@ -1,4 +1,4 @@
-import { MdOutlineArrowRightAlt } from "react-icons/md";
+import { MdOutlineArrowDropDown, MdOutlineArrowRightAlt } from "react-icons/md";
 
 interface IconProps extends React.HTMLAttributes<SVGElement> {
     fill?: string;
@@ -394,5 +394,8 @@ export const Icons = {
     ),
     Right: (props: IconProps) => (
         <MdOutlineArrowRightAlt {...props} />
+    ),
+    Dropdown: (props: IconProps) => (
+        <MdOutlineArrowDropDown {...props} />
     )
 }

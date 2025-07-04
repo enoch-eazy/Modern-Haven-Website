@@ -14,7 +14,7 @@ export default function AboutCard({sectionTitle, image, paragraph1, paragraph2}:
                     priority
                     quality={100}
                     src={image} 
-                    alt="about" width={100} height={100} className="w-full md:h-[450px] object-cover object-top rounded-xl" />
+                    alt="about" className="w-full md:h-[450px] object-cover object-top rounded-xl" />
                 </div>
                 <div className="flex flex-col gap-4 items-center justify-center">
                     <p className="md:text-lg text-sm">

@@ -75,6 +75,10 @@ export const Socials = [
         icons: Icons.Linkedin({ className: "w-10 h-10" })
     }
 ]
+export const AccountItem = [
+    { name: "Login", href: "/login" },
+    { name: "Sign Up", href: "/signup" }
+];
 
 export const NewSection = [
     {

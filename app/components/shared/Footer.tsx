@@ -3,10 +3,12 @@ import images from "@/public/images";
 import Link from "next/link";
 import Image from "next/image";
 import { Otherpages, Contact, Socials } from "@/app/utils";
+import MobileFooter from "./MobileFooter";
 
 export default function Footer() {
     return (
-        <footer className="bg-[#0F2B22] text-white py-4">
+        <>
+        <footer className="bg-[#0F2B22] text-white py-4 hidden md:block">
             <div className={`${sectionPadding} `}>
                 <div className="flex flex-col md:flex-row md:justify-between gap-4 py-4">
                     <div className="flex flex-col gap-4 pr-4">
@@ -57,5 +59,7 @@ export default function Footer() {
                 </div>
             </div>
         </footer>
+         <MobileFooter />
+         </>
     )
 }

@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function HeroBanner() {
     return (
-    <div className={`md:px-[8%] relative mt-12 md:mt-32 md:mb-20`}>
+    <div className={`md:px-[8%] relative mt-12 mb-20 md:mt-32 md:mb-20`}>
       <div className="md:h-[264px] h-fit w-full md:py-0 py-8 bg-gradient-to-r from-[#0F2B22] to-[#FFD700]/80 flex items-center md: gap-12 md:px-16 px-4 md:rounded-3xl ">
         <div className=" md:block hidden -translate-y-[48px]">
             <Image src={images.man} alt="man" />
@@ -18,7 +18,7 @@ export default function HeroBanner() {
           Got inquiries about our products, orders, or anything else? Reach out to our team and we'll assist you with the right answers. Whether you're shopping for men's fashion, women's wear, or kids' gadgets, we're always ready to help you make the best choice.
           </p>
           <Link href="/contact">
-            <Button>
+            <Button className="w-full mt-4">
                 Make Enquiry
             </Button>
           </Link>

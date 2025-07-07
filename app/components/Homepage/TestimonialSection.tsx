@@ -25,7 +25,7 @@ const TestimonialSection: React.FC<TestimonialProps> = ({sectionTitle, testimoni
                     <div 
                     className="flex flex-col gap-4 justify-center">
                         <p 
-                        className=" text-white w-[300px] font-bold" >
+                        className=" text-white w-full md:w-[300px] font-bold" >
                             "{testimonials[currentTestimonial].testimonial}"
                         </p>
                         <h2 
@@ -52,7 +52,6 @@ const TestimonialSection: React.FC<TestimonialProps> = ({sectionTitle, testimoni
                         className={
                             `${currentTestimonial === testimonial.id ? "bg-[#FFD700]" : "bg-white"} w-2 h-2 rounded-full cursor-pointer
                             `}
-                        onClick={() => setCurrentTestimonial(testimonial.id)}
                         >
                         </div>
                     ))}

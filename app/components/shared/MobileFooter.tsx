@@ -16,9 +16,9 @@ export default function MobileFooter() {
                         Bringing style, comfort, and tech together for men, women, and kids. From timeless fashion pieces to smart gadgets, we’re your one-stop destination for the whole family
                         </p>    
                     </div>
-                    <div className="flex flex-row justify-between">
-                        <div className="flex flex-col gap-4 pr-4">
-                            <h2 className="text-white  font-bold">Other Pages</h2>
+                    <div className="flex flex-row justify-between w-full">
+                        <div className="flex flex-col gap-4 w-full">
+                            <h2 className="text-white font-bold">Other Pages</h2>
                             <ul className="flex flex-col gap-4 text-sm">
                                 {Otherpages.map((page, index) => (
                                     <li key={index}>
@@ -27,8 +27,8 @@ export default function MobileFooter() {
                                 ))}
                             </ul>
                         </div>
-                        <div className="flex flex-col gap-4 pr-4">
-                            <h2 className="text-white  font-bold">Contact Us</h2>
+                        <div className="flex flex-col gap-4 w-full">
+                            <h2 className="text-white font-bold">Contact Us</h2>
                             <ul className="flex flex-col gap-4 text-sm">
                                 {Contact.map((contact, index) => (
                                     <li key={index}>

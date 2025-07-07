@@ -20,7 +20,7 @@ export default function Navbar() {
     return (
         <>
         {/* Desktop Nav  */}
-            <nav className={`${sectionPadding} hidden fixed top-0 left-0 right-0 z-50 bg-white text-gray-500`}>
+            <nav className={`${sectionPadding} hidden md:block fixed top-0 left-0 right-0 z-50 bg-white text-gray-500`}>
                 <div className="flex justify-between items-center">
                     <Image src={images.logo} alt="logo" width={100} height={100} className="w-30 h-18 object-cover" />
                         <ul className="flex gap-8 relative">

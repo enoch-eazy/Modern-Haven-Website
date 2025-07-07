@@ -5,12 +5,27 @@ import images from "@/public/images";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 
 export default function MobileNav() {
-    const pathname = usePathname();
+    const navRef = useRef<HTMLDivElement>(null);
     const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+    useEffect(() => {
+        if (!isMobileNavOpen) return;
+        const handleOutsideClick = (event: MouseEvent) => {
+            if (navRef.current && !navRef.current.contains(event.target as Node)) {
+                setIsMobileNavOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleOutsideClick);
+        return () => {
+            document.removeEventListener("mousedown", handleOutsideClick);
+        };
+    }, [isMobileNavOpen]);
+    const pathname = usePathname();
+    
     return (
         <>
         <nav className={`${sectionPadding}  md:hidden fixed top-0 left-0 right-0 z-50 bg-white text-gray-500`}>
@@ -29,6 +44,7 @@ export default function MobileNav() {
                     ></div>
                     {/* Sliding Nav */}
                     <div
+                        ref={navRef}
                         className={`
                             ${sectionPadding}
                             fixed top-0 left-0 bg-white w-[75%] h-screen z-50

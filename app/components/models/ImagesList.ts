@@ -81,4 +81,11 @@ export const ImageKidsCarousel: ImageCarouselProps[] = [
         alt: "hero 7",
     }
 ]
+export const ContactImage: ImageCarouselProps[] = [
+    {
+        id: 1,
+        image: images.Contact_Img,
+        alt: "hero 1",
+    }
+]
 

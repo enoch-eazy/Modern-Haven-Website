@@ -56,6 +56,9 @@ import TestimonialImage4 from "./images/teenTestimony4.jpg";
 import Shop_Img from "./images/shop_Img.jpg";
 import ShopItem1 from "./images/shopItem1.jpg";
 
+// Contact Section
+import Contact_Img from "./images/contactHero_Img.jpg";
+
 
 export default {
     logo,
@@ -105,5 +108,6 @@ export default {
     Shop_Img,
     ShopItem1,
     BestSellers_Img,
-    Trending_Img
+    Trending_Img,
+    Contact_Img
 }

@@ -54,11 +54,11 @@ export const Contact = [
 ]
 
 export const Socials = [
-    {
-        name: "Facebook",
-        href: "https://www.facebook.com/profile.php?id=100091000000000",
-        icons: Icons.Facebook({ className: "" })
-    },
+    // {
+    //     name: "Facebook",
+    //     href: "https://www.facebook.com/profile.php?id=100091000000000",
+    //     icons: Icons.Facebook({ className: "" })
+    // },
     {
         name: "Instagram",
         href: "https://www.instagram.com/eazy_enoch?igsh=aXJhdGlxdGcwd2o0",

@@ -1,17 +1,19 @@
+"use client"
 import { ImageCarouselProps } from "@/app/components/models/ImagesList";
 import Button from "@/app/ui/button"
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link"
 import { useEffect, useState } from "react";
 
 interface HeroSectionProps {
-    plaintitle: string;
-    highlightedtitle: string;
-    description: string;
+    plaintitle?: string;
+    highlightedtitle?: string;
+    description?: string;
+    singleImage?: StaticImageData;
     image: ImageCarouselProps[];
 }
 
-const HeroSection: React.FC<HeroSectionProps> = ({plaintitle, highlightedtitle, description, image}) => {
+const HeroSection: React.FC<HeroSectionProps> = ({plaintitle, highlightedtitle, description, image, singleImage}) => {
     const [currentImage, setCurrentImage] = useState(0);
     useEffect(() => {
         const interval = setInterval(() => {

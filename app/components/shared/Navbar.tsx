@@ -2,7 +2,7 @@
 
 import { sectionPadding } from "@/app/styles/styles"
 import { Icons } from "@/app/ui/icons"
-import { AccountItem, Otherpages } from "@/app/utils"
+import { AccountItem, Otherpages, Shop } from "@/app/utils"
 import images from "@/public/images"
 import Image from "next/image"
 import Link from "next/link"
@@ -22,7 +22,9 @@ export default function Navbar() {
         {/* Desktop Nav  */}
             <nav className={`${sectionPadding} hidden md:block fixed top-0 left-0 right-0 z-50 bg-white text-gray-500`}>
                 <div className="flex justify-between items-center">
-                    <Image src={images.logo} alt="logo" width={100} height={100} className="w-30 h-18 object-cover" />
+                    <Link href="/">
+                        <Image src={images.logo} alt="logo" width={100} height={100} className="w-30 h-18 object-cover" />
+                    </Link>
                         <ul className="flex gap-8 relative">
                             {Otherpages.map((item, index) => {
                                 const isActive = pathname === item.link;
@@ -36,12 +38,55 @@ export default function Navbar() {
                                     >
                                         <Link href={item.link} className="flex items-center">
                                             {item.name}
+                                            {/* {item.Icons && (
+                                                <span className="ml-1 transition-transform duration-300 group-hover:rotate-180">
+                                                    {item.Icons}
+                                                </span>
+                                            )} */}
+                                        </Link>
+                                        {/* {item.submenu && (
+                                            <ul className="pointer-events-none absolute left-0 top-0 mt-4 bg-[#0F2B22] text-black shadow-lg rounded-lg opacity-0 group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-2 transition-all ease-in-out duration-300 w-40">
+                                                {item.submenu.map((subItem, subIndex) => {
+                                                    const isSubActive = pathname === subItem.link;
+                                                    return (
+                                                        <li
+                                                            key={subIndex}
+                                                            className={`
+                                                                ${isSubActive ? "my-2 bg-[#FFD700] text-white" : "text-gray-500 hover:text-white hover:bg-[#FFD700]/50 transition-all duration-300"}
+                                                                p-3 w-full
+                                                            `}
+                                                        >
+                                                            <Link 
+                                                            onClick={() => router.push('/shop')}
+                                                            href={subItem.link} className="block w-full">
+                                                                {subItem.name}
+                                                            </Link>
+                                                        </li>
+                                                    );
+                                                })}
+                                            </ul>
+                                        )} */}
+                                    </li>
+                                );
+                            })}
+                             {Shop.map((item, index) => {
+                                // const isActive = pathname === item.link;
+                                return (
+                                    <li
+                                        key={index}
+                                        className={`
+                                            relative group transition-all duration-300 hover:text-[#FFD700] cursor-pointer
+                                            
+                                        `}
+                                    >
+                                        <div  className="flex items-center">
+                                            {item.name}
                                             {item.Icons && (
                                                 <span className="ml-1 transition-transform duration-300 group-hover:rotate-180">
                                                     {item.Icons}
                                                 </span>
                                             )}
-                                        </Link>
+                                        </div>
                                         {item.submenu && (
                                             <ul className="pointer-events-none absolute left-0 top-0 mt-4 bg-[#0F2B22] text-black shadow-lg rounded-lg opacity-0 group-hover:pointer-events-auto group-hover:opacity-100 group-hover:translate-y-2 transition-all ease-in-out duration-300 w-40">
                                                 {item.submenu.map((subItem, subIndex) => {

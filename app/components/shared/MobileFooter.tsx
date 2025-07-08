@@ -1,5 +1,5 @@
 import { sectionPadding } from "@/app/styles/styles";
-import { Otherpages } from "@/app/utils";
+import { AccountItem, Footercontent } from "@/app/utils";
 import Link from "next/link";
 import Image from "next/image";
 import images from "@/public/images";
@@ -11,18 +11,24 @@ export default function MobileFooter() {
             <div className={`${sectionPadding} `}>
                 <div className="flex flex-col gap-4 py-4">
                     <div className="flex flex-col gap-4 pr-4">
-                        <Image src={images.logo} alt="Modern Fashion & Family" quality={100} priority className="invert w-[90px] h-[70px] object-cover"/>
+                        <Link href="/">
+                            <Image src={images.logo} alt="Modern Fashion & Family" quality={100} priority className="invert w-[90px] h-[70px] object-cover"/>
+                        </Link>
                         <p className="text-white w-full md:w-[350px]">
                         Bringing style, comfort, and tech together for men, women, and kids. From timeless fashion pieces to smart gadgets, we’re your one-stop destination for the whole family
                         </p>    
                     </div>
-                    <div className="flex flex-row justify-between w-full">
+                    <div className="flex flex-row justify-between w-full mt-4">
                         <div className="flex flex-col gap-4 w-full">
                             <h2 className="text-white font-bold">Other Pages</h2>
                             <ul className="flex flex-col gap-4 text-sm">
-                                {Otherpages.map((page, index) => (
+                                {Footercontent.map((page, index) => (
                                     <li key={index}>
-                                        <Link href={page.link} className="text-white hover:text-[#FFD700] transition-all duration-300">{page.name}</Link>
+                                        <Link 
+                                        href={page.link} 
+                                        className="text-white hover:text-[#FFD700] transition-all duration-300">
+                                            {page.name}
+                                        </Link>
                                     </li>
                                 ))}
                             </ul>
@@ -41,8 +47,22 @@ export default function MobileFooter() {
                         </div>
                     </div>
                     
-                    <div className="flex flex-col gap-4 pr-4 mt-4">
-                        <h2 className="text-white font-bold">Social Media</h2>
+                    {/* Account  */}
+                    <div className="flex flex-col gap-4 mt-4">
+                        <h2 className="text-white  font-bold">Account</h2>
+                        <ul className="flex flex-col gap-4 text-sm">
+                            {AccountItem.map((account, index) => (
+                                <li key={index}>
+                                    <Link href={account.href} className="text-white hover:text-[#FFD700] transition-all duration-300 flex items-center gap-2">
+                                        {account.name} 
+                                    </Link>
+                                </li>
+                            ))}
+                        </ul>
+                    </div>
+                    
+                    <div className="flex flex-col gap-4 mt-4 justify-center items-center">
+                        <h2 className="text-white font-bold text-center">Follow Us</h2>
                         <ul className="flex flex-row gap-4 text-sm">
                             {Socials.map((social, index) => (
                                 <li key={index}>

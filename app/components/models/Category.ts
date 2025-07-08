@@ -67,32 +67,32 @@ export const CategoryItemMen = [
 ];
 export const CategoryItemWomen = [
     {
-        image: images.categoryImagesshirts,
+        image: images.Dress,
         Item: "DRESSES",
         href: "/shop/women/dresses"
     },
     {
-        image: images.categoryImagesjerseys,
+        image: images.HandBag,
         Item: "HANDBAGS",
         href: "/shop/women/handbags"
     },
     {
-        image: images.categoryImagespants,
+        image: images.Skirts,
         Item: "SKIRTS",
         href: "/shop/women/skirts"
     },
     {
-        image: images.categoryImagessweaters,
+        image: images.Jacket,
         Item: "JACKETS",
         href: "/shop/women/jackets"
     },
     {
-        image: images.categoryImagesshoes,
+        image: images.Heels,
         Item: "HEELS",
         href: "/shop/women/heels"
     },
     {
-        image: images.categoryImageshorts,
+        image: images.Accessory_Img,
         Item: "ACCESSORIES",
         href: "/shop/women/accessories"
     }

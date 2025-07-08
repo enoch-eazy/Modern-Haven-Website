@@ -3,8 +3,10 @@ import Link from "next/link";
 import { useState } from "react";
 import { sectionPadding } from "../styles/styles";
 import { Icons } from "../ui/icons";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+    const router = useRouter();
     const [showPassword, setShowPassword] = useState(false);
     const [showconfirmPassword, setShowConfirmPassword] = useState(false)
     const [formData, setFormData] = useState({
@@ -37,8 +39,19 @@ export default function Login() {
         }
     };
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        if (formData.firstName === "" || formData.lastName === "" || formData.email === "" || formData.phoneNumber === "" || formData.password === "" || formData.confirmPassword === "") {
+            setErrors((prev) => ({...prev, firstName: "First name is required", lastName: "Last name is required", email: "Email is required", phoneNumber: "Phone number is required", password: "Password is required", confirmPassword: "Confirm password is required"}))
+            return;
+        }
+        if (formData.password !== formData.confirmPassword) {
+            setErrors((prev) => ({...prev, password: "Password and confirm password do not match"}))
+            return;
+        }
         e.preventDefault();
         console.log(formData);
+        setTimeout(() => {
+            router.push("/login");
+        }, 3000);
     };
     return (
         <div className={`${sectionPadding}  mt-32 md:mt-40 pb-20 md:pb-40 text-gray-600`}>

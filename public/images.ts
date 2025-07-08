@@ -51,6 +51,18 @@ import TestimonialImage1 from "./images/testimonialWomen_Img1.jpg";
 import TestimonialImage2 from "./images/testimonialWomen_Img2.jpg";
 import TestimonialImage3 from "./images/testimonialWomen_Img3.jpg";
 import TestimonialImage4 from "./images/teenTestimony4.jpg";
+import WomenHero_Img1 from "./images/womenHeroSection_Img1.jpg";
+import WomenHero_Img2 from "./images/womenHeroSection_Img2.jpg";
+import WomenHero_Img3 from "./images/womenHeroSection_Img3.jpg";
+import WomenHero_Img4 from "./images/womenHeroSection_Img4.jpg";
+import WomenHero_Img5 from "./images/womenHeroSection_Img5.jpg";
+import WomenHero_Img6 from "./images/womenHeroSection_Img6.jpg";
+import Dress from "./images/womenDress_Img.jpg";
+import Heels from "./images/womenHeels_Img.jpg";
+import Skirts from "./images/womenSkirt_Img.jpg";
+import HandBag from "./images/womenHandbag_Img.jpg";
+import Accessory_Img from "./images/womenAccessory_Img.jpg";
+import Jacket from "./images/womenJacket_Img.jpg"; 
 
 // Shop Section
 import Shop_Img from "./images/shop_Img.jpg";
@@ -58,6 +70,15 @@ import ShopItem1 from "./images/shopItem1.jpg";
 
 // Contact Section
 import Contact_Img from "./images/contactHero_Img.jpg";
+
+// About Section
+import AboutHero_Img1 from "./images/aboutHeroSection_Img1.jpg";
+import AboutHero_Img2 from "./images/aboutHeroSection_Img2.jpg";
+import AboutHero_Img3 from "./images/aboutHeroSecction_Img3.jpg";
+import AboutHero_Img4 from "./images/aboutHeroSection_Img4.jpg";
+import AboutHero_Img5 from "./images/aboutHeroSection_Img5.jpg";
+import AboutHero_Img6 from "./images/aboutHeroSection_Img6.jpg";
+
 
 
 export default {
@@ -109,5 +130,23 @@ export default {
     ShopItem1,
     BestSellers_Img,
     Trending_Img,
-    Contact_Img
+    Contact_Img,
+    AboutHero_Img1,
+    AboutHero_Img2,
+    AboutHero_Img3,
+    AboutHero_Img4,
+    AboutHero_Img5,
+    AboutHero_Img6,
+    WomenHero_Img1,
+    WomenHero_Img2,
+    WomenHero_Img3,
+    WomenHero_Img4,
+    WomenHero_Img5,
+    WomenHero_Img6,
+    Dress,
+    Heels,
+    Skirts,
+    HandBag,
+    Accessory_Img,
+    Jacket
 }

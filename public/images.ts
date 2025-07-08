@@ -17,12 +17,12 @@ import hero4 from "./images/hero4.jpg";
 import hero5 from "./images/hero5.jpg";
 import hero6 from "./images/hero6.jpg";
 import hero7 from "./images/hero7.jpg"
-import categoryImageshorts from "./images/catgeoryImageshoes.jpg";
-import categoryImagesshoes from "./images/categoryImageshorts.jpg";
-import categoryImagessweaters from "./images/sweater_img.jpg";
-import categoryImagesjerseys from "./images/categoryImagejerseys.jpg";
-import categoryImagespants from "./images/categoryImagepants.jpg";
-import categoryImagesshirts from "./images/categoryImageshirts.jpg";
+import categoryImagesPerfume from "./images/categoryMenPerfume.jpg";
+import categoryImagesshoes from "./images/categoryMenShoe.jpg";
+import categoryImagessweaters from "./images/categoryMenSweater.jpg";
+import categoryImagesjerseys from "./images/categoryMenJersey.jpg";
+import categoryMenWatch from "./images/categoryMenWatch.jpg";
+import categoryImagesshirts from "./images/categoryMenShirt.jpg";
 import aboutImage from "./images/aboutMen_Img.jpg";
 import testimonialImage1 from "./images/testimonial_Img.jpg";
 import testimonialImage2 from "./images/testimonial2_Img.jpg";
@@ -39,11 +39,17 @@ import Game_Img from "./images/game_Img.jpg";
 import Costume_Img from "./images/costume_Img.jpg";
 import Background_Img from "./images/background_Img.jpg";
 import Fun_Img from "./images/fun_Img.jpg";
-import aboutKid_Img from "./images/aboutKid_Img.jpg";
+import aboutKid_Img from "./images/aboutGame_Img.jpg";
 import teenTestimony1 from "./images/teenTestimony1.jpg";
 import teenTestimony2 from "./images/teenTestimony2.jpg";
 import teenTestimony3 from "./images/teenTestimony3.jpg";
 import teenTestimony4 from "./images/teenTestimony4.jpg";
+import categoryTeenGames from "./images/categoryTeensPlaystation.jpg";
+import categoryTeenToy from "./images/categoryTeensToy.jpg";
+import categoryTeenSneaker from "./images/categoryTeensSneaker.jpg";
+import categoryTeenHoodie from "./images/categoryTeensHoody.jpg";
+import categoryTeenShirt from "./images/categoryTeensT-Shirt.jpg";
+import categoryTeenTrouser from "./images/categoryTeensTrouser.jpg";
 
 // Women Section 
 import WomenFashion from "./images/womenfashion_Img.jpg";
@@ -91,11 +97,11 @@ export default {
     hero5,
     hero6,
     hero7,
-    categoryImageshorts,
+    categoryImagesPerfume,
     categoryImagesshoes,
     categoryImagessweaters,
     categoryImagesjerseys,
-    categoryImagespants,
+    categoryMenWatch,
     categoryImagesshirts,
     aboutImage,
     testimonialImage1,
@@ -148,5 +154,12 @@ export default {
     Skirts,
     HandBag,
     Accessory_Img,
-    Jacket
+    Jacket,
+    categoryTeenGames,
+    categoryTeenToy,
+    categoryTeenSneaker,
+    categoryTeenHoodie,
+    categoryTeenShirt,
+    categoryTeenTrouser,
+
 }

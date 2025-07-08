@@ -17,12 +17,12 @@ import hero4 from "./images/hero4.jpg";
 import hero5 from "./images/hero5.jpg";
 import hero6 from "./images/hero6.jpg";
 import hero7 from "./images/hero7.jpg"
-import categoryImageshorts from "./images/catgeoryImageshoes.jpg";
-import categoryImagesshoes from "./images/categoryImageshorts.jpg";
-import categoryImagessweaters from "./images/sweater_img.jpg";
-import categoryImagesjerseys from "./images/categoryImagejerseys.jpg";
-import categoryImagespants from "./images/categoryImagepants.jpg";
-import categoryImagesshirts from "./images/categoryImageshirts.jpg";
+import categoryImagesPerfume from "./images/categoryMenPerfume.jpg";
+import categoryImagesshoes from "./images/categoryMenShoe.jpg";
+import categoryImagessweaters from "./images/categoryMenSweater.jpg";
+import categoryImagesjerseys from "./images/categoryMenJersey.jpg";
+import categoryMenWatch from "./images/categoryMenWatch.jpg";
+import categoryImagesshirts from "./images/categoryMenShirt.jpg";
 import aboutImage from "./images/aboutMen_Img.jpg";
 import testimonialImage1 from "./images/testimonial_Img.jpg";
 import testimonialImage2 from "./images/testimonial2_Img.jpg";
@@ -39,11 +39,17 @@ import Game_Img from "./images/game_Img.jpg";
 import Costume_Img from "./images/costume_Img.jpg";
 import Background_Img from "./images/background_Img.jpg";
 import Fun_Img from "./images/fun_Img.jpg";
-import aboutKid_Img from "./images/aboutKid_Img.jpg";
+import aboutKid_Img from "./images/aboutGame_Img.jpg";
 import teenTestimony1 from "./images/teenTestimony1.jpg";
 import teenTestimony2 from "./images/teenTestimony2.jpg";
 import teenTestimony3 from "./images/teenTestimony3.jpg";
 import teenTestimony4 from "./images/teenTestimony4.jpg";
+import categoryTeenGames from "./images/categoryTeensPlaystation.jpg";
+import categoryTeenToy from "./images/categoryTeensToy.jpg";
+import categoryTeenSneaker from "./images/categoryTeensSneaker.jpg";
+import categoryTeenHoodie from "./images/categoryTeensHoody.jpg";
+import categoryTeenShirt from "./images/categoryTeensT-Shirt.jpg";
+import categoryTeenTrouser from "./images/categoryTeensTrouser.jpg";
 
 // Women Section 
 import WomenFashion from "./images/womenfashion_Img.jpg";
@@ -51,6 +57,18 @@ import TestimonialImage1 from "./images/testimonialWomen_Img1.jpg";
 import TestimonialImage2 from "./images/testimonialWomen_Img2.jpg";
 import TestimonialImage3 from "./images/testimonialWomen_Img3.jpg";
 import TestimonialImage4 from "./images/teenTestimony4.jpg";
+import WomenHero_Img1 from "./images/womenHeroSection_Img1.jpg";
+import WomenHero_Img2 from "./images/womenHeroSection_Img2.jpg";
+import WomenHero_Img3 from "./images/womenHeroSection_Img3.jpg";
+import WomenHero_Img4 from "./images/womenHeroSection_Img4.jpg";
+import WomenHero_Img5 from "./images/womenHeroSection_Img5.jpg";
+import WomenHero_Img6 from "./images/womenHeroSection_Img6.jpg";
+import Dress from "./images/womenDress_Img.jpg";
+import Heels from "./images/womenHeels_Img.jpg";
+import Skirts from "./images/womenSkirt_Img.jpg";
+import HandBag from "./images/womenHandbag_Img.jpg";
+import Accessory_Img from "./images/womenAccessory_Img.jpg";
+import Jacket from "./images/womenJacket_Img.jpg"; 
 
 // Shop Section
 import Shop_Img from "./images/shop_Img.jpg";
@@ -58,6 +76,15 @@ import ShopItem1 from "./images/shopItem1.jpg";
 
 // Contact Section
 import Contact_Img from "./images/contactHero_Img.jpg";
+
+// About Section
+import AboutHero_Img1 from "./images/aboutHeroSection_Img1.jpg";
+import AboutHero_Img2 from "./images/aboutHeroSection_Img2.jpg";
+import AboutHero_Img3 from "./images/aboutHeroSecction_Img3.jpg";
+import AboutHero_Img4 from "./images/aboutHeroSection_Img4.jpg";
+import AboutHero_Img5 from "./images/aboutHeroSection_Img5.jpg";
+import AboutHero_Img6 from "./images/aboutHeroSection_Img6.jpg";
+
 
 
 export default {
@@ -70,11 +97,11 @@ export default {
     hero5,
     hero6,
     hero7,
-    categoryImageshorts,
+    categoryImagesPerfume,
     categoryImagesshoes,
     categoryImagessweaters,
     categoryImagesjerseys,
-    categoryImagespants,
+    categoryMenWatch,
     categoryImagesshirts,
     aboutImage,
     testimonialImage1,
@@ -109,5 +136,30 @@ export default {
     ShopItem1,
     BestSellers_Img,
     Trending_Img,
-    Contact_Img
+    Contact_Img,
+    AboutHero_Img1,
+    AboutHero_Img2,
+    AboutHero_Img3,
+    AboutHero_Img4,
+    AboutHero_Img5,
+    AboutHero_Img6,
+    WomenHero_Img1,
+    WomenHero_Img2,
+    WomenHero_Img3,
+    WomenHero_Img4,
+    WomenHero_Img5,
+    WomenHero_Img6,
+    Dress,
+    Heels,
+    Skirts,
+    HandBag,
+    Accessory_Img,
+    Jacket,
+    categoryTeenGames,
+    categoryTeenToy,
+    categoryTeenSneaker,
+    categoryTeenHoodie,
+    categoryTeenShirt,
+    categoryTeenTrouser,
+
 }

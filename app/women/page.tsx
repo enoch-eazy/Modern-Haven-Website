@@ -3,7 +3,7 @@ import HomeNavbar from "../components/shared/HomeNavbar";
 import AboutCard from "../components/Homepage/AboutCard";
 import images from "@/public/images";
 import HeroSection from "../components/shared/HeroSection";
-import { ImageMenCarousel } from "../components/models/ImagesList";
+import { ImageWomenCarousel } from "../components/models/ImagesList";
 import TestimonialSection from "../components/Homepage/TestimonialSection";
 import { TestimonialsWomen } from "../components/models/Testimonial";
 import CategorySection from "../components/Homepage/CategorySection";
@@ -14,13 +14,12 @@ export default function Women() {
     
     return (
         <main>
-            
             <HomeNavbar />
             <HeroSection 
             plaintitle="Your" 
             highlightedtitle="Cozy Era" 
             description="Get peak comfy-chic with new winter essentials" 
-            image={ImageMenCarousel} />
+            image={ImageWomenCarousel} />
             <AboutCard 
             sectionTitle="About Women's fashion" 
             image={images.WomenFashion} 

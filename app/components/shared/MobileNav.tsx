@@ -30,7 +30,9 @@ export default function MobileNav() {
         <>
         <nav className={`${sectionPadding}  md:hidden fixed top-0 left-0 right-0 z-50 bg-white text-gray-500`}>
                 <div className="flex justify-between items-center">
-                    <Image src={images.logo} alt="logo" priority quality={100} className="w-[90px] h-[70px] object-cover" />
+                    <Link href="/">
+                        <Image src={images.logo} alt="logo" priority quality={100} className="w-[90px] h-[70px] object-cover" />
+                    </Link>
                     <Icons.Hamburger onClick={() => setIsMobileNavOpen(!isMobileNavOpen)} />
                 </div>
                 <>
@@ -53,7 +55,9 @@ export default function MobileNav() {
                         `}
                     >
                         <div className="w-full flex justify-between items-center mt-6">
-                            <Image src={images.logo} alt="logo" priority quality={100} className="w-[90px] h-[70px] object-cover" />
+                            <Link href="/">
+                                <Image src={images.logo} alt="logo" priority quality={100} className="w-[90px] h-[70px] object-cover" />
+                            </Link>
                             <Icons.Close onClick={() => setIsMobileNavOpen(false)} className="cursor-pointer"/>
                         </div>
                         <div className="flex flex-col gap-4 mt-8">

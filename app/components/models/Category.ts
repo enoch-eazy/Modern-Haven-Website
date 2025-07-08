@@ -45,9 +45,9 @@ export const CategoryItemMen = [
         href: "/shop/men/jerseys"
     },
     {
-        image: images.categoryImagespants,
-        Item: "PANTS",
-        href: "/shop/men/pants"
+        image: images.categoryMenWatch,
+        Item: "WATCHES",
+        href: "/shop/men/watch"
     },
     {
         image: images.categoryImagessweaters,
@@ -60,73 +60,73 @@ export const CategoryItemMen = [
         href: "/shop/men/shoes"
     },
     {
-        image: images.categoryImageshorts,
-        Item: "SHORTS",
-        href: "/shop/men/shorts"
+        image: images.categoryImagesPerfume,
+        Item: "PERFUME",
+        href: "/shop/men/perfume"
     }
 ];
 export const CategoryItemWomen = [
     {
-        image: images.categoryImagesshirts,
+        image: images.Dress,
         Item: "DRESSES",
         href: "/shop/women/dresses"
     },
     {
-        image: images.categoryImagesjerseys,
+        image: images.HandBag,
         Item: "HANDBAGS",
         href: "/shop/women/handbags"
     },
     {
-        image: images.categoryImagespants,
+        image: images.Skirts,
         Item: "SKIRTS",
         href: "/shop/women/skirts"
     },
     {
-        image: images.categoryImagessweaters,
+        image: images.Jacket,
         Item: "JACKETS",
         href: "/shop/women/jackets"
     },
     {
-        image: images.categoryImagesshoes,
+        image: images.Heels,
         Item: "HEELS",
         href: "/shop/women/heels"
     },
     {
-        image: images.categoryImageshorts,
+        image: images.Accessory_Img,
         Item: "ACCESSORIES",
         href: "/shop/women/accessories"
     }
 ];
 export const CategoryItemKids = [
     {
-        image: images.categoryImagesshirts,
+        image: images.categoryTeenTrouser,
         Item: "TROUSERS",
-        href: "/shop/kids/trousers"
+        href: "/shop/kids/trouser"
     },
     {
-        image: images.categoryImagesjerseys,
+        image: images.categoryTeenHoodie,
         Item: "HOODIES",
-        href: "/shop/kids/hoodies"
+        href: "/shop/kids/hoodie"
     },
     {
-        image: images.categoryImagespants,
+        image: images.categoryTeenShirt,
         Item: "T-SHIRTS",
-        href: "/shop/kids/t-shirts"
+        href: "/shop/kids/tshirt"
     },
     {
-        image: images.categoryImagessweaters,
+        image: images.categoryTeenToy,
         Item: "TOYS",
-        href: "/shop/kids/toys"
+        href: "/shop/kids/toy"
     },
     {
-        image: images.categoryImagesshoes,
+        image: images.categoryTeenSneaker,
         Item: "SNEAKERS",
-        href: "/shop/kids/sneakers"
+        href: "/shop/kids/sneaker"
     },
     {
-        image: images.categoryImageshorts,
-        Item: "GADGETS",
-        href: "/shop/kids/gadgets"
+        image: images.categoryTeenGames,
+        Item: "PLAYSTATION",
+        href: "/shop/kids/playstation"
     }
 ];
 

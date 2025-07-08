@@ -3,8 +3,11 @@ import Link from "next/link";
 import { useState } from "react";
 import { sectionPadding } from "../styles/styles";
 import { Icons } from "../ui/icons";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+    const router = useRouter();
+    const [isLoading, setIsLoading] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
     const [formData, setFormData] = useState({
         email: "",
@@ -25,8 +28,17 @@ export default function Login() {
         }
     };
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        if (formData.email === "" || formData.password === "") {
+            setErrors((prev) => ({...prev, email: "Email is required", password: "Password is required"}))
+            return;
+        }
         e.preventDefault();
+        setIsLoading(true);
         console.log(formData);
+        setTimeout(() => {
+            router.push("/");
+            setIsLoading(false);
+        }, 3000);
     };
     
     return (
@@ -81,7 +93,20 @@ export default function Login() {
                         <Link href="/forgot-password" className="text-[#0F2B22] text-sm font-bold">Forgot Password?</Link>
                     </div>
                     <div className="mt-8">
-                        <button type="submit" className="cursor-pointer ease-in-out transition-all duration-400 hover:bg-[#FFD700] w-full bg-[#0F2B22] text-white p-2 rounded-full">Log in</button>
+                        <button 
+                        type="submit" 
+                        className="flex items-center justify-center gap-3 cursor-pointer ease-in-out transition-all duration-400 hover:bg-[#FFD700] w-full bg-[#0F2B22] text-white p-2 rounded-full">
+                            {isLoading ? (
+                                                <>
+                                                    Logging in...
+                                                </>
+                                            ) : (
+                                                <>
+                                                    Log in
+                                                    <Icons.ArrowRight className="w-4 h-4" />
+                                                </>
+                                            )}
+                        </button>
                     </div>
                     <div className="mt-4 text-center w-[70%] mx-auto">
                         <small>

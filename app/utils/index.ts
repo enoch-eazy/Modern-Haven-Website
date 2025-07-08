@@ -14,9 +14,28 @@ export const Otherpages = [
         name: "Contact",
         link: "/contact",
     },
+]
+export const Footercontent = [
+    {
+        name: "Home",
+        link: "/",
+    },
+    {
+        name: "About",
+        link: "/about",
+    },
+    {
+        name: "Contact",
+        link: "/contact",
+    },
     {
         name: "Shop",
         link: "/shop",
+    }
+]
+export const Shop = [
+    {
+        name: "Shop",
         Icons: Icons.Dropdown({ className: "w-6 h-6" }),
         submenu: [
             {

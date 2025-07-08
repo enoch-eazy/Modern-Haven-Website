@@ -47,11 +47,11 @@ export default function Contact() {
             {/* {ImageCarousel.map((image, index) => (
                 <Image key={index} src={image.image} alt={image.alt} width={100} height={100} className="w-full md:h-[450px] object-cover object-[50%_10%]" />
             ))} */}
-        <div className={` ${sectionPadding} text-white absolute top-0 left-0 w-full h-full flex flex-col gap-4 justify-center`}> 
-                <h2 className="text-2xl md:text-6xl font-bold text-center md:text-left md:mt-0 mt-10">Contact Us</h2>
-                <p className="text-sm md:text-lg text-gray-200 w-full md:w-[45%] text-center md:text-left"><span className="text-2xl font-bold">We’re Here for You </span><br />
-                Contact us for assistance, product inquiries, or feedback. Let’s help make your experience better</p>
-                {/* Please fill out the form below and we'll get back to you as soon as possible. */}
+            <div className={` ${sectionPadding} text-white absolute top-0 left-0 w-full h-full flex flex-col gap-4 justify-center`}> 
+                    <h2 className="text-2xl md:text-6xl font-bold text-center md:text-left md:mt-0 mt-10">Contact Us</h2>
+                    <p className="text-sm md:text-lg text-gray-200 w-full md:w-[45%] text-center md:text-left"><span className="text-2xl font-bold">We’re Here for You </span><br />
+                    Contact us for assistance, product inquiries, or feedback. Let’s help make your experience better</p>
+                    {/* Please fill out the form below and we'll get back to you as soon as possible. */}
             </div>    
             </div>
             <section className={` text-white`}>
@@ -247,7 +247,7 @@ export default function Contact() {
                                         <button
                                             type="submit"
                                             disabled={isSubmitting}
-                                            className="bg-[#0F2B22] flex items-center justify-center gap-3 rounded-full py-3 w-full text-white font-semibold hover:bg-gray-800 transition-all duration-300 ease-in-out disabled:opacity-70 disabled:cursor-not-allowed"
+                                            className="cursor-pointer bg-[#0F2B22] flex items-center justify-center gap-3 rounded-full py-3 w-full text-white font-semibold hover:bg-[#0F2B22]/90 transition-all duration-300 ease-in-out disabled:opacity-70 disabled:cursor-not-allowed"
                                         >
                                             {isSubmitting ? (
                                                 <>

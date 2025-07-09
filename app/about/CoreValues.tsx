@@ -37,7 +37,7 @@ export default function CoreValues() {
             <p className="mx-auto w-full md:w-[550px] text-gray-500 text-sm md:text-base mb-8 text-center">
             Our core values shape our dedication to creating exceptional fashion and lifestyle experiences for every family.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">  
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-white">  
                 {CoreValues.slice(0, 3).map((item, index) => (
                     <div key={index} className="text-center w-full h-[200px] flex flex-col space-y-4 p-5 bg-[#0F2B22] shadow-[#0F2B22] hover:shadow-2xl rounded-md transition-all duration-300">
                         <span className="mx-auto">

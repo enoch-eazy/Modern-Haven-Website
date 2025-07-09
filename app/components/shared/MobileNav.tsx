@@ -1,6 +1,6 @@
 import { sectionPadding } from "@/app/styles/styles";
 import { Icons } from "@/app/ui/icons";
-import { AccountItem, Otherpages } from "@/app/utils";
+import { AccountItem, Footercontent, Otherpages } from "@/app/utils";
 import images from "@/public/images";
 import Image from "next/image";
 import Link from "next/link";
@@ -61,10 +61,9 @@ export default function MobileNav() {
                             <Icons.Close onClick={() => setIsMobileNavOpen(false)} className="cursor-pointer"/>
                         </div>
                         <div className="flex flex-col gap-4 mt-8">
-                            {Otherpages.map((item, index) => {
+                            {Footercontent.map((item, index) => {
                                 const isActive = pathname === item.link;
                                 return (
-                                    
                                     <Link
                                     key={index} 
                                     href={item.link} 

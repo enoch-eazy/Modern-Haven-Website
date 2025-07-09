@@ -84,7 +84,9 @@ import AboutHero_Img3 from "./images/aboutHeroSecction_Img3.jpg";
 import AboutHero_Img4 from "./images/aboutHeroSection_Img4.jpg";
 import AboutHero_Img5 from "./images/aboutHeroSection_Img5.jpg";
 import AboutHero_Img6 from "./images/aboutHeroSection_Img6.jpg";
-
+import aboutUS_Img1 from "./images/aboutUs_Img1.jpg";
+import aboutUs_Img2 from "./images/aboutUs_Img2.jpg";
+import aboutUs_Img3 from "./images/aboutUs_Img3.jpg";
 
 
 export default {
@@ -161,5 +163,7 @@ export default {
     categoryTeenHoodie,
     categoryTeenShirt,
     categoryTeenTrouser,
-
+    aboutUS_Img1,
+    aboutUs_Img2,
+    aboutUs_Img3,
 }

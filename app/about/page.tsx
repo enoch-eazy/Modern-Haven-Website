@@ -30,7 +30,7 @@ export default function AbouutPage() {
                     </h2>
                     <p 
                     className="text-sm md:text-lg text-gray-200 w-full md:w-[55%] text-center md:text-left">
-                        <span className="text-2xl font-bold">
+                        <span className="text-base md:text-2xl font-bold">
                             Discover the Heart of Modern Haven
                         </span><br />
                         We’re more than just a store — we’re a lifestyle. Built for families who love fashion and tech, Modern Haven brings you style, comfort, and quality all in one place.

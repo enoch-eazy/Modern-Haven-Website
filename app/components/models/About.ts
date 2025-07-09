@@ -7,5 +7,6 @@ export interface AboutProps {
     image: StaticImageData;
     paragraph1: string;
     paragraph2: string;
+    order?: "left" | "right";
 }
 

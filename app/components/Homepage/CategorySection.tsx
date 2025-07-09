@@ -6,7 +6,8 @@ import Link from "next/link";
 
 const CategorySection: React.FC<CategoryProps> = ({sectionTitle, categoryItem}) => {
     return (
-        <section className={`${sectionPadding} flex flex-col items-center justify-center mt-10 mb-20`}>
+        <section suppressHydrationWarning
+        className={`${sectionPadding} flex flex-col items-center justify-center mt-10 mb-20`}>
             <h1 className="text-2xl font-bold text-center text-[#0F2B22] mb-8" >{sectionTitle}</h1>
             <div className="flex flex-col md:grid md:grid-cols-3 gap-8 w-full">
                 {categoryItem.map((item, index) => (

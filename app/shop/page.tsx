@@ -1,26 +1,27 @@
-"use client"
+import images from "@/public/images";
+import Image from "next/image";
+import Link from "next/link";
+import Button from "../ui/button";
+import { sectionPadding } from "../styles/styles";
+import KidsShop from "./kids/page";
 
-import HomeNavbar from "../components/shared/HomeNavbar"
-import HeroSection from "../components/shared/HeroSection"
-import AboutSection from "../components/Homepage/AboutSection"
-import Category from "../components/Homepage/Category"
-import Testimonial from "../components/Homepage/Testimonial"
-import HeroBanner from "../components/shared/HeroBanner"
-import { ImageMenCarousel } from "../components/models/ImagesList"
 
 export default function ShopPage() {
     return (
-        <main>
-            <HomeNavbar />
-            <HeroSection 
-            plaintitle="Your" 
-            highlightedtitle="Cozy Era" 
-            description="Get peak comfy-chic with new winter essentials" 
-            image={ImageMenCarousel} />
-            <AboutSection />
-            <Category />
-            <Testimonial />
-            <HeroBanner />
+        <main className={`${sectionPadding} mx-auto py-4 mt-20 w-1/2`}>
+           <div className="flex justify-between items-center mx-auto bg-[#0F2B22] p-2">
+                <Link href={"/"} className="cursor-pointer">
+                    <Image src={images.logo} alt="Logo" className="w-14 h-14 invert"/>
+                </Link>
+                <Link href={"/shop/men"}>
+                    <Button >
+                        Add Shop
+                    </Button>
+                </Link>
+           </div>
+           <div>
+                <KidsShop />
+           </div>
         </main>
     )
 }

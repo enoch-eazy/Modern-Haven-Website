@@ -1,6 +1,9 @@
-import { FaEyeSlash } from "react-icons/fa";
+import { BsAwardFill } from "react-icons/bs";
+import { FaEyeSlash, FaThumbsUp } from "react-icons/fa";
+import { GiPoliceBadge } from "react-icons/gi";
+import { IoIosPeople } from "react-icons/io";
 import { IoEyeSharp } from "react-icons/io5";
-import { MdOutlineArrowDropDown, MdOutlineArrowRightAlt } from "react-icons/md";
+import { MdOutlineArrowDropDown, MdOutlineArrowRightAlt, MdOutlineTipsAndUpdates } from "react-icons/md";
 
 interface IconProps extends React.HTMLAttributes<SVGElement> {
     fill?: string;
@@ -405,6 +408,20 @@ export const Icons = {
     ),
     EyeOff: (props: IconProps) => (
         <FaEyeSlash {...props}/>
-
+    ),    
+    Badge: (props: IconProps) => (
+        <GiPoliceBadge {...props}/>
+    ),    
+    Excellence: (props: IconProps) => (
+        <BsAwardFill {...props}/>
+    ),    
+    Thumbs: (props: IconProps) => (
+        <FaThumbsUp {...props}/>
+    ),    
+    Community: (props: IconProps) => (
+        <IoIosPeople {...props}/>
+    ),    
+    Innovayion: (props: IconProps) => (
+        <MdOutlineTipsAndUpdates {...props}/>
     ),    
 }

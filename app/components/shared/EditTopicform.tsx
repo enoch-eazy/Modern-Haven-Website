@@ -5,13 +5,12 @@ import Button from "@/app/ui/button";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
-
-export default function MenShop() {
-    const router = useRouter();
+export default function EditShopForm ({id, title, description, price}: any ) {
+    const router = useRouter()
     const [formValue, setFormValue] = useState({
-        title: "",
-        description: "",
-        price: ""
+        newTitle: title,
+        newDescription: description,
+        newPrice: price
     });
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const {name, value} = e.target;
@@ -26,25 +25,23 @@ export default function MenShop() {
     };
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        if (!formValue.title || !formValue.description || !formValue.price) {
-            alert("Title, Description, and Price are required.");
-            return;
-        }
         try {
-            const res = await fetch("http://localhost:3000/api/shops/", {
-                method: "POST",
-                headers: {
-                    "Content-type": "application/json",
-                },
-                body: JSON.stringify({title: formValue.title, price: formValue.price, description: formValue.description})
-             } );
-             if (res.ok) {
-                router.push("/shop");
-             } else {
-                throw new Error("Failed to create Shop");
-             }
+            const res = await fetch(`http://localhost:3000/api/shops/${id}`, {
+                method: "PUT",
+                headers: {"Content-type": "application/json"},
+                body: JSON.stringify({newTitle: formValue.newTitle, newDescription:formValue.newDescription, newPrice: formValue.newPrice})
+            });
+            if (!res.ok) {
+                throw new Error("Failed to Update")
+            } 
+            router.refresh();
+            router.push("/shop");
         } catch (error) {
             console.log(error)
+        }
+        if (!formValue.newTitle || !formValue.newDescription || !formValue.newPrice) {
+            alert("Title, Description, and Price are required.");
+            return;
         }
     }
     return (
@@ -52,23 +49,23 @@ export default function MenShop() {
             <form onSubmit={handleSubmit} className="w-1/2 flex flex-col gap-3 mt-10 mx-auto">
                 <input 
                 onChange={handleChange}
-                name="title"
-                value={formValue.title}
+                name="newTitle"
+                value={formValue.newTitle}
                 className="border border-slate-300 px-8 py-2"
                 type="text"
                 placeholder="Topic Title" />
                 <input 
                 onChange={handleChange}
-                name="description"
-                value={formValue.description}
+                name="newDescription"
+                value={formValue.newDescription}
                 className="border border-slate-300 px-8 py-2"
                 type="text"
                 placeholder="Your Description"
                 />
                 <input 
                 onChange={handleChange}
-                name="price"
-                value={formValue.price}
+                name="newPrice"
+                value={formValue.newPrice}
                 className="border border-slate-300 px-8 py-2"
                 type="text"
                 placeholder="Price"

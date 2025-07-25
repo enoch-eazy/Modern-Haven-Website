@@ -2,7 +2,7 @@ import { sectionPadding } from "../styles/styles";
 
 export default function OurPromise() {
     return (
-        <section className={`${sectionPadding}`}>
+        <section className={`${sectionPadding} py-0 md:py-20`}>
             <div className="flex flex-col md:flex-row gap-10">
                 <h2 className="text-2xl font-bold">
                     Our Promise

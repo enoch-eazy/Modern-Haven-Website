@@ -29,7 +29,7 @@ const CategorySection: React.FC<CategoryProps> = ({sectionTitle, categoryItem}) 
         variants={fadeInLeft}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: false, amount: 0.2 }}
+        viewport={{ once: true, amount: 0.2 }}
         > 
         <section suppressHydrationWarning
         className={`${sectionPadding} flex flex-col items-center justify-center mt-10 mb-20`}>
@@ -49,12 +49,13 @@ const CategorySection: React.FC<CategoryProps> = ({sectionTitle, categoryItem}) 
                             className="flex flex-col gap-3 items-center justify-center w-full">
                                 <p 
                                 className="font-bold text-center text-white">{item.Item}</p>
-                                    <Link href="/shop/men" className="w-full">
                                         <button 
                                         className="w-full hover:text-[#FFD700] hover:bg-black/80 transition-all duration-300 bg-black text-white px-10 py-2 rounded-b-xl cursor-pointer flex items-center justify-center gap-2">
+                                            <Link href="/shop/men" className="w-full">
                                             View More <Icons.Right />
+                                            </Link>
                                         </button>
-                                    </Link>
+                                   
                                 </div>
                         </div>
                     </Link>

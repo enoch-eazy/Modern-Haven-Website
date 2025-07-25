@@ -32,7 +32,7 @@ export default function Footer() {
                     </div>
 
                     {/* Account  */}
-                    <div className="flex flex-col gap-4 pr-4">
+                    {/* <div className="flex flex-col gap-4 pr-4">
                         <h2 className="text-white text-center font-bold">Account</h2>
                         <ul className="flex flex-col gap-4 text-sm">
                             {AccountItem.map((account, index) => (
@@ -43,7 +43,7 @@ export default function Footer() {
                                 </li>
                             ))}
                         </ul>
-                    </div>
+                    </div> */}
 
                     {/* Contact Us  */}
                     <div className="flex flex-col gap-4 pr-4">

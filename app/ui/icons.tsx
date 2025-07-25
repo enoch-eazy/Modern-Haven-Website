@@ -1,5 +1,6 @@
 import { BsAwardFill } from "react-icons/bs";
-import { FaEyeSlash, FaThumbsUp } from "react-icons/fa";
+import { CiLogin, CiLogout } from "react-icons/ci";
+import { FaEyeSlash, FaQuoteLeft, FaThumbsUp } from "react-icons/fa";
 import { GiPoliceBadge } from "react-icons/gi";
 import { IoIosPeople } from "react-icons/io";
 import { IoEyeSharp } from "react-icons/io5";
@@ -13,6 +14,16 @@ interface IconProps extends React.HTMLAttributes<SVGElement> {
 }
 
 export const Icons = {
+
+    Quote: (props: IconProps) => (
+        <FaQuoteLeft {...props}/>
+    ),
+    Login: (props: IconProps) => (
+        <CiLogin {...props}/>
+    ),
+    Logout: (props: IconProps) => (
+        <CiLogout {...props}/>
+    ),
     Hamburger: (props: IconProps) => (
         <svg {...props} width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3 17H21M3 12H21M3 7H21" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

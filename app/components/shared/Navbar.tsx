@@ -9,6 +9,7 @@ import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { useState } from "react";
 import MobileNav from "./MobileNav"
+import Session from "./Session"
 
 export default function Navbar() {
     const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -114,7 +115,7 @@ export default function Navbar() {
                             })}
                         </ul>
                         <ul className="flex gap-4">
-                            {AccountItem.map((item, index) => (
+                            {/* {AccountItem.map((item, index) => (
                                 <li 
                                     key={index}
                                     className={`transition-all duration-300 hover:text-[#FFD700] cursor-pointer ${pathname === item.href ? "font-bold text-[#FFD700]" : ""}`}
@@ -126,7 +127,9 @@ export default function Navbar() {
                                         {item.name}
                                     </Link>
                                 </li>
-                            ))}
+                            ))} */}
+                            
+                            <Session />
                         </ul>
                 </div>
             </nav>

@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import Session from "./Session";
 
 
 export default function MobileNav() {
@@ -75,8 +76,10 @@ export default function MobileNav() {
                                     </Link>
                                 )
                             })}
-                            <div>
-                            {AccountItem.map((item, index) => (
+                            <div 
+                            onClick={() => setIsMobileNavOpen(false)}
+                            className="mt-10">
+                            {/* {AccountItem.map((item, index) => (
                                 <div key={index} className="p-4">
                                 <button 
                                 onClick={() => setIsMobileNavOpen(false)}
@@ -86,7 +89,8 @@ export default function MobileNav() {
                                 </Link>
                                 </button>
                                 </div>
-                            ))}
+                            ))} */}
+                            <Session />
                             </div>
 
                         </div>

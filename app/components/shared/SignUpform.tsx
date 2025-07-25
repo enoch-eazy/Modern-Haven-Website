@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { sectionPadding } from "@/app/styles/styles";
 import { Icons } from "@/app/ui/icons";
 import { useRouter } from "next/navigation";
@@ -8,6 +8,7 @@ import { useRouter } from "next/navigation";
 export default function SignUpForm() {
     const router = useRouter();
     const [showPassword, setShowPassword] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
     const [showconfirmPassword, setShowConfirmPassword] = useState(false)
     const [formData, setFormData] = useState({
         firstName: "",
@@ -50,10 +51,17 @@ export default function SignUpForm() {
             return;
         }
         try {
-            const res = await fetch("api/signup", {
+            const res = await fetch("api/auth/signup", {
                 method: "POST",
                 headers: {"Content-type": "application/json",},
-                body: JSON.stringify({firstName: formData.firstName, lastName: formData.lastName, email: formData.email, phoneNumber: formData.phoneNumber, password: formData.password, confirmPassword: formData.confirmPassword})
+                body: JSON.stringify({
+                    firstName: formData.firstName, 
+                    lastName: formData.lastName, 
+                    email: formData.email, 
+                    phoneNumber: formData.phoneNumber, 
+                    password: formData.password, 
+                    confirmPassword: formData.confirmPassword
+                })
             }
             );
             if (res.ok) {
@@ -65,10 +73,17 @@ export default function SignUpForm() {
         } catch (error) {
             console.log("Error during SignUp", error)
         }
+
+       setIsLoading(true);
+      
+       
+        // For demonstration purposes, we log the formData to the console
+        
         
         console.log(formData);
         setTimeout(() => {
-            // router.push("/login");
+            setIsLoading(false);
+            router.push("/login");
         }, 3000);
     };
     return (
@@ -110,14 +125,14 @@ export default function SignUpForm() {
                     {/* Email and Phone Number Input  */}
                     <div className="flex flex-col gap-4 md:flex-row  mt-4">
                         <div className="w-full flex flex-col gap-2">
-                            <label>Enter a valid Email Address</label>
+                            <label>Email</label>
                             <input 
                             required
                             type="email" 
                             name="email" 
                             value={formData.email} 
                             onChange={handleChange} 
-                            placeholder="Enter your email address"
+                            placeholder="Enter a valid Email Address"
                             className="text-gray-400 text-base w-full placeholder:text-gray-400 placeholder:text-sm p-2 rounded-md border border-gray-300 outline-none focus:border-[#01459E]" />
                         </div>
                         <div className="w-full flex flex-col gap-2">
@@ -168,7 +183,20 @@ export default function SignUpForm() {
 
                     </div>
                     <div className="mt-8">
-                        <button type="submit" className="cursor-pointer ease-in-out transition-all duration-400 hover:bg-[#FFD700] w-full bg-[#0F2B22] text-white p-2 rounded-full">Create Account</button>
+                         <button
+                        type="submit" 
+                        className="flex items-center justify-center gap-3 cursor-pointer ease-in-out transition-all duration-400 hover:bg-[#FFD700] w-full bg-[#0F2B22] text-white p-2 rounded-full">
+                            {isLoading ? (
+                                                <>
+                                                    Creating...
+                                                </>
+                                            ) : (
+                                                <>
+                                                    Create Account
+                                                    <Icons.ArrowRight className="w-4 h-4" />
+                                                </>
+                                            )}
+                        </button>
                     </div>
                     <div className="mt-4 text-center w-[70%] mx-auto">
                         <small>

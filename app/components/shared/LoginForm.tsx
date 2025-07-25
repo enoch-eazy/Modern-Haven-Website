@@ -4,6 +4,7 @@ import { useState } from "react";
 import { sectionPadding } from "@/app/styles/styles";
 import { Icons } from "@/app/ui/icons";
 import { useRouter } from "next/navigation";
+import { signIn } from "next-auth/react";
 // import { login } from "@/lib/actions/auth";
 
 export default function LoginForm() {
@@ -37,7 +38,27 @@ export default function LoginForm() {
             setErrors((prev) => ({...prev, email: "Enter the correct Email", password: "Enter the correct Password"}));
             return;
         }
+        const formdata = new FormData(e.currentTarget);
+        const response = await signIn('credentials', {
+            // email: formdata.get('email'),
+            // password: formdata.get('password'),
+            // redirect: false,
+            email: formData.email,
+            password: formData.password,
+            redirect: false,
+        });
+        console.log(response); 
+        if(!response?.error) {
+            router.push("/");
+            router.refresh()
+        }
+
         setIsLoading(true);
+       
+        setTimeout(() => {
+            setIsLoading(false);
+            // router.push("/login");
+        }, 3000);
         // try {
         //     // Call your async login function here
         //     await login(); // Removed arguments to match function signature

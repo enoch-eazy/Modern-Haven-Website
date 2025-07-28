@@ -36,29 +36,30 @@ const CategorySection: React.FC<CategoryProps> = ({sectionTitle, categoryItem}) 
             <h1 className="text-2xl font-bold text-center text-[#0F2B22] mb-8" >{sectionTitle}</h1>
             <div className="flex flex-col md:grid md:grid-cols-3 gap-8 w-full">
                 {categoryItem.map((item, index) => (
-                    <Link href={item.href} key={index}>
+                    
                         <div 
                         className="flex flex-col gap-3 items-center justify-center w-full bg-[#0F2B22] rounded-xl cursor-pointer">
-                            <Image 
-                            src={item.image} 
-                            alt={item.Item}
-                            priority
-                            quality={100} 
-                            className="w-full h-[380px] object-cover object-top rounded-t-xl" />
-                            <div 
-                            className="flex flex-col gap-3 items-center justify-center w-full">
-                                <p 
-                                className="font-bold text-center text-white">{item.Item}</p>
-                                        <button 
-                                        className="w-full hover:text-[#FFD700] hover:bg-black/80 transition-all duration-300 bg-black text-white px-10 py-2 rounded-b-xl cursor-pointer flex items-center justify-center gap-2">
-                                            <Link href="/shop/men" className="w-full">
-                                            View More <Icons.Right />
-                                            </Link>
-                                        </button>
-                                   
-                                </div>
+                            <Link href={item.href} key={index}>
+                                <Image 
+                                src={item.image} 
+                                alt={item.Item}
+                                priority
+                                quality={100} 
+                                className="w-full h-[380px] object-cover object-top rounded-t-xl" />
+                                <div 
+                                className="flex flex-col gap-3 items-center justify-center w-full">
+                                    <p 
+                                    className="font-bold text-center text-white">{item.Item}</p>
+                                            <button 
+                                            className="w-full hover:text-[#FFD700] hover:bg-black/80 transition-all duration-300 bg-black text-white px-10 py-2 rounded-b-xl cursor-pointer flex items-center justify-center gap-2">
+                                                <Link href="/shop/men" className="w-full">
+                                                    View More <Icons.Right />
+                                                </Link>
+                                            </button>
+                                    </div>
+                            </Link>
                         </div>
-                    </Link>
+                    
                 ))}
             </div>
             <Link href="/shop" className="w-full mt-10 text-center">

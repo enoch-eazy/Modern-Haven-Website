@@ -1,24 +1,24 @@
-import { easeInOut, motion } from "framer-motion";
+// import { easeInOut, motion } from "framer-motion";
 import { sectionPadding } from "../../styles/styles";
 import { Icons } from "../../ui/icons";
 
-const fadeInLeft = {
-    hidden: { opacity: 0, x: -60 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.7, ease: easeInOut }
-    },
-  };
+// const fadeInLeft = {
+//     hidden: { opacity: 0, x: -60 },
+//     visible: {
+//       opacity: 1,
+//       x: 0,
+//       transition: { duration: 0.7, ease: easeInOut }
+//     },
+//   };
   
-  const fadeInRight = {
-    hidden: { opacity: 0, x: 60 },
-    visible: {
-      opacity: 1,
-      x: 0,
-      transition: { duration: 0.7 }
-    },
-  };
+//   const fadeInRight = {
+//     hidden: { opacity: 0, x: 60 },
+//     visible: {
+//       opacity: 1,
+//       x: 0,
+//       transition: { duration: 0.7 }
+//     },
+//   };
 
 export default function CoreValues() {
     const CoreValues = [

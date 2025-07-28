@@ -1,5 +1,5 @@
 import EditShopForm from "@/app/components/shared/EditTopicform";
-import axios from "axios";
+// import axios from "axios";
 
 const getShopById = async (id: any) => {
     try {
@@ -15,11 +15,11 @@ const getShopById = async (id: any) => {
         console.log(error);
     }
 }
-export default async function WomenShop( { params }: { params: { id: number } }) {
-    const { id } = await params;
+export default async function WomenShop({ params }: { params: { id: string } }) {
+    const { id } = params;
     const { shop } = await getShopById(id);
-    const {title, description, price} = shop
+    const { title, description, price } = shop;
     return (
         <EditShopForm id={id} title={title} description={description} price={price}/>
-    )
+    );
 }

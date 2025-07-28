@@ -1,3 +1,6 @@
+"use client"
+
+
 import { CategoryProps } from "@/app/components/models/Category";
 import { sectionPadding } from "@/app/styles/styles";
 import { Icons } from "@/app/ui/icons";

@@ -1,6 +1,6 @@
 import { sectionPadding } from "@/app/styles/styles";
 import { Icons } from "@/app/ui/icons";
-import { AccountItem, Footercontent, Otherpages } from "@/app/utils";
+import {  Footercontent } from "@/app/utils";
 import images from "@/public/images";
 import Image from "next/image";
 import Link from "next/link";

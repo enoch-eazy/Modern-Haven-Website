@@ -1,5 +1,5 @@
 import { sectionPadding } from "@/app/styles/styles";
-import { AccountItem, Footercontent } from "@/app/utils";
+import {  Footercontent } from "@/app/utils";
 import Link from "next/link";
 import Image from "next/image";
 import images from "@/public/images";

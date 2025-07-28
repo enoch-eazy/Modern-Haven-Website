@@ -1,6 +1,6 @@
 "use client"
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { sectionPadding } from "@/app/styles/styles";
 import { Icons } from "@/app/ui/icons";
 import { useRouter } from "next/navigation";

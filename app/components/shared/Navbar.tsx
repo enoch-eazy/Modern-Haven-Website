@@ -1,8 +1,8 @@
 "use client"
 
 import { sectionPadding } from "@/app/styles/styles"
-import { Icons } from "@/app/ui/icons"
-import { AccountItem, Otherpages, Shop } from "@/app/utils"
+// import { Icons } from "@/app/ui/icons"
+import {  Otherpages, Shop } from "@/app/utils"
 import images from "@/public/images"
 import Image from "next/image"
 import Link from "next/link"

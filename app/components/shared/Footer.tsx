@@ -2,7 +2,7 @@ import { sectionPadding } from "@/app/styles/styles";
 import images from "@/public/images";
 import Link from "next/link";
 import Image from "next/image";
-import { Otherpages, Contact, Socials, Footercontent, AccountItem } from "@/app/utils";
+import { Contact, Socials, Footercontent } from "@/app/utils";
 import MobileFooter from "./MobileFooter";
 
 export default function Footer() {

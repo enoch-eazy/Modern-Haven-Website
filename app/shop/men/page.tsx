@@ -49,32 +49,32 @@ export default function MenShop() {
     }
     return (
         <section className={`${sectionPadding} mt-20 py-20 `}>
-            <form onSubmit={handleSubmit} className="w-1/2 flex flex-col gap-3 mt-10 mx-auto">
+            <form onSubmit={handleSubmit} className="w-full md:w-[600px] flex flex-col gap-6 mt-10 mx-auto">
                 <input 
                 onChange={handleChange}
                 name="title"
                 value={formValue.title}
-                className="border border-slate-300 px-8 py-2"
+                className="border border-slate-300 px-8 py-3"
                 type="text"
-                placeholder="Topic Title" />
+                placeholder="Item" />
                 <input 
                 onChange={handleChange}
                 name="description"
                 value={formValue.description}
-                className="border border-slate-300 px-8 py-2"
+                className="border border-slate-300 px-8 py-3"
                 type="text"
-                placeholder="Your Description"
+                placeholder="Description"
                 />
                 <input 
                 onChange={handleChange}
                 name="price"
                 value={formValue.price}
-                className="border border-slate-300 px-8 py-2"
+                className="border border-slate-300 px-8 py-3"
                 type="text"
                 placeholder="Price"
                 />
                 <Button >
-                    Update Topic
+                    Add Item
                 </Button>
             </form>
         </section>

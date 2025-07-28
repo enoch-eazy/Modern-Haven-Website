@@ -3,6 +3,8 @@ import { TestimonialProps } from "@/app/components/models/Testimonial";
 import { sectionPadding } from "@/app/styles/styles";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import {motion, AnimatePresence } from "framer-motion"
+import { Icons } from "@/app/ui/icons";
 
 const TestimonialSection: React.FC<TestimonialProps> = ({sectionTitle, testimonials}) => {
     const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -20,10 +22,19 @@ const TestimonialSection: React.FC<TestimonialProps> = ({sectionTitle, testimoni
             className={`${sectionPadding} `}>
                 <h1 
                 className="text-2xl font-bold text-center text-white mb-8" >{sectionTitle}</h1>
+                <AnimatePresence mode="sync">
+                    <motion.div
+                        key={currentTestimonial}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.4 }}
+                    >
                 <div 
-                className="flex flex-col md:flex-row justify-center gap-12">
+                className="flex flex-col md:flex-row justify-between gap-12"> 
                     <div 
-                    className="flex flex-col gap-4 justify-center">
+                    className="flex flex-col gap-4 justify-evenly w-full">
+                        <Icons.Quote className="w-20 h-20 text-white"/>
                         <p 
                         className=" text-white w-full md:w-[300px] font-bold" >
                             "{testimonials[currentTestimonial].testimonial}"
@@ -42,15 +53,17 @@ const TestimonialSection: React.FC<TestimonialProps> = ({sectionTitle, testimoni
                         priority
                         quality={100}
                         className="w-[400px] h-[450px] object-cover object-top rounded-xl" />
-                    </div>
+                    </div>  
                 </div>
+                </motion.div>
+                </AnimatePresence>
                 {/* Indicator for the testimonials */}
                 <div className="flex justify-center gap-4 mt-8">
-                    {testimonials.map((testimonial) => (
+                    {testimonials.map((testimonial, index) => (
                         <div 
                         key={testimonial.id} 
                         className={
-                            `${currentTestimonial === testimonial.id ? "bg-[#FFD700]" : "bg-white"} w-2 h-2 rounded-full cursor-pointer
+                            `${currentTestimonial === index ? "bg-[#FFD700]" : "bg-white"} w-2 h-2 rounded-full cursor-pointer
                             `}
                         >
                         </div>

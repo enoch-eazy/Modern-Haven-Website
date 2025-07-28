@@ -1,5 +1,6 @@
 import images from "@/public/images"
 import { Icons } from "../ui/icons"
+import { ApplicationRoutes } from "../components/constant/applicationRoutes"
 
 export const Otherpages = [
     {
@@ -8,7 +9,7 @@ export const Otherpages = [
     },
     {
         name: "About",
-        link: "/about",
+        link: ApplicationRoutes.About,
     },
     {
         name: "Contact",

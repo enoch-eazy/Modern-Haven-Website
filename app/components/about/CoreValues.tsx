@@ -1,5 +1,24 @@
-import { sectionPadding } from "../styles/styles";
-import { Icons } from "../ui/icons";
+import { easeInOut, motion } from "framer-motion";
+import { sectionPadding } from "../../styles/styles";
+import { Icons } from "../../ui/icons";
+
+const fadeInLeft = {
+    hidden: { opacity: 0, x: -60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7, ease: easeInOut }
+    },
+  };
+  
+  const fadeInRight = {
+    hidden: { opacity: 0, x: 60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7 }
+    },
+  };
 
 export default function CoreValues() {
     const CoreValues = [
@@ -30,6 +49,13 @@ export default function CoreValues() {
         },
     ]
     return (
+        <>
+        {/* <motion.div
+        variants={fadeInLeft}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: false, amount: 0.2 }}
+        > */}
         <section className={`${sectionPadding} bg-white py-4`}>
             <h1 className="text-2xl font-bold text-center text-[#0F2B22] mt-4" >
                 Modern Haven Fashion Core Values
@@ -69,5 +95,7 @@ export default function CoreValues() {
             </div>
 
         </section>
+        {/* </motion.div> */}
+        </>
     )
 }

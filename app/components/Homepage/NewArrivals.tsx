@@ -19,7 +19,7 @@ export default function NewArrivals() {
                 </p>
                 <div className="flex flex-col md:flex-row gap-4">
                     {NewSection.map((item, index) => (
-                        <div className="relative w-full">
+                        <div key={index} className="relative w-full">
                         <Image 
                         priority
                         quality={100}

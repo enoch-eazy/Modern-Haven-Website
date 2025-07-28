@@ -6,8 +6,29 @@ import { sectionPadding } from "../styles/styles";
 import Link from "next/link";
 import { useState } from "react";
 import { Icons } from "../ui/icons";
+import { motion, easeInOut } from "framer-motion";
 
-
+const sectionVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.7 } },
+  };
+const fadeInLeft = {
+    hidden: { opacity: 0, x: -60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7, ease: easeInOut }
+    },
+  };
+  
+  const fadeInRight = {
+    hidden: { opacity: 0, x: 60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7 }
+    },
+  };
 export default function Contact() {
     const [formValues, setFormValues] = useState({
         fullName: "",
@@ -56,6 +77,8 @@ export default function Contact() {
             </div>
             <section className={` text-white`}>
             <div className={`${sectionPadding} md:pb-0 pb-48 md:pt-0 pt-10`}>
+                <motion.div
+                initial="hidden" whileInView="visible" viewport={{ once: true }} variants={sectionVariants}>
                 <div className="max-w-6xl mx-auto ">
                     {/* Desktop Version */}
                     <div className="hidden md:block">
@@ -145,12 +168,19 @@ export default function Contact() {
                         </div>
                     </div>
                 </div>
+                </motion.div>
 
                 {/* Get in Touch  */}
                 <div className="md:h-[500px] h-[550px]">
                     <div className="">
                         {/* Get in Touch */}
-                        <div className="flex flex-col gap-6 md:gap-8 md:flex-row md:justify-between mt-16">
+                        <div className="flex flex-col gap-6  md:flex-row md:justify-between mt-16">
+                        <motion.div
+                        variants={fadeInRight}
+                        initial="hidden"
+                        whileInView="visible"
+                        viewport={{ once: false, amount: 0.2 }}
+                        >
                             <div className="text-black w-full md:w-80">
                                 <h1 className="text-2xl text-black font-bold">Get in Touch</h1>
                                 <span className="text-[#7A7A7A] text-base">
@@ -175,12 +205,18 @@ export default function Contact() {
                                         rel="noopener noreferrer"
                                     >
                                         <Icons.Twitter className="w-10 h-10 bg-[#0F2B22] rounded-full p-2 text-[#FFD700]" />
-                                    </Link>
-                                    
+                                    </Link> 
                                 </div>
                             </div>
+                            </motion.div>
 
                             {/* Form */}
+                            <motion.div
+                            variants={fadeInRight}
+                            initial="hidden"
+                            whileInView="visible"
+                            viewport={{ once: false, amount: 0.2 }}
+                            >
                             <form onSubmit={handleSubmit} className="flex flex-col rounded-xl border border-[#FFD700] p-6 md:p-8 bg-white shadow-sm">
                                 <div className="flex flex-col gap-5 text-grey">
                                     <div className="flex flex-col md:flex-row gap-4">
@@ -263,6 +299,7 @@ export default function Contact() {
                                     </div>
                                 </div>
                             </form>
+                            </motion.div>
                         </div>
                     </div>
                 </div>

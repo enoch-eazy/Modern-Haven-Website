@@ -48,7 +48,7 @@ export default function MobileFooter() {
                     </div>
                     
                     {/* Account  */}
-                    <div className="flex flex-col gap-4 mt-4">
+                    {/* <div className="flex flex-col gap-4 mt-4">
                         <h2 className="text-white  font-bold">Account</h2>
                         <ul className="flex flex-col gap-4 text-sm">
                             {AccountItem.map((account, index) => (
@@ -59,7 +59,7 @@ export default function MobileFooter() {
                                 </li>
                             ))}
                         </ul>
-                    </div>
+                    </div> */}
                     
                     <div className="flex flex-col gap-4 mt-4 justify-center items-center">
                         <h2 className="text-white font-bold text-center">Follow Us</h2>

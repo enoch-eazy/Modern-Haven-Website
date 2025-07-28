@@ -13,11 +13,11 @@ export default function ShopPage() {
                 <Link href={"/"} className="cursor-pointer">
                     <Image src={images.logo} alt="Logo" className="w-14 h-14 invert"/>
                 </Link>
-                <Link href={"/shop/men"}>
                     <Button >
+                    <Link href={"/shop/men"}>
                         Add Shop
+                    </Link>
                     </Button>
-                </Link>
            </div>
            <div>
                 <KidsShop />

@@ -46,19 +46,19 @@ export default function EditShopForm ({id, title, description, price}: any ) {
     }
     return (
         <section className={`${sectionPadding} mt-20 py-20 `}>
-            <form onSubmit={handleSubmit} className="w-1/2 flex flex-col gap-3 mt-10 mx-auto">
+            <form onSubmit={handleSubmit} className="w-full md:w-[600px] flex flex-col gap-6 mt-10 mx-auto">
                 <input 
                 onChange={handleChange}
                 name="newTitle"
                 value={formValue.newTitle}
-                className="border border-slate-300 px-8 py-2"
+                className="border border-slate-300 px-8 py-3"
                 type="text"
                 placeholder="Topic Title" />
                 <input 
                 onChange={handleChange}
                 name="newDescription"
                 value={formValue.newDescription}
-                className="border border-slate-300 px-8 py-2"
+                className="border border-slate-300 px-8 py-3"
                 type="text"
                 placeholder="Your Description"
                 />
@@ -66,12 +66,12 @@ export default function EditShopForm ({id, title, description, price}: any ) {
                 onChange={handleChange}
                 name="newPrice"
                 value={formValue.newPrice}
-                className="border border-slate-300 px-8 py-2"
+                className="border border-slate-300 px-8 py-3"
                 type="text"
                 placeholder="Price"
                 />
                 <Button >
-                    Update Topic
+                    Update Item
                 </Button>
             </form>
         </section>

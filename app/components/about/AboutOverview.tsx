@@ -1,11 +1,30 @@
 "use client"
 import images from "@/public/images";
-import { sectionPadding } from "../styles/styles";
-import Button from "../ui/button";
+import { sectionPadding } from "../../styles/styles";
+import Button from "../../ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { AnimatePresence, easeInOut, motion } from "framer-motion";
 
+
+const fadeInLeft = {
+    hidden: { opacity: 0, x: -60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7, ease: easeInOut }
+    },
+  };
+  
+  const fadeInRight = {
+    hidden: { opacity: 0, x: 60 },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: { duration: 0.7 }
+    },
+  };
 export default function AboutOverview() {
     const ImageList = [
         {
@@ -29,6 +48,13 @@ export default function AboutOverview() {
         return  () => clearInterval(interval)
     }, []);
     return (
+    <>
+    <motion.div
+    variants={fadeInLeft}
+    initial="hidden"
+    whileInView="visible"
+    viewport={{ once: false, amount: 0.2 }}
+    >
        <section className={`${sectionPadding} py-0 md:py-20`}>
         <h1 className="text-2xl font-bold text-center text-[#0F2B22] md:mb-12 mb-8" >About Modern Haven Fashion</h1>
         <div className="flex flex-col gap-4 md:flex-row md:justify-between">
@@ -49,6 +75,7 @@ export default function AboutOverview() {
             {/* Image Contents  */}
             <div className="order-1 md:order-2 w-full p-1 md:w-1/2 relative flex flex-row">
             {/* Desktop View  */}
+           
                 <div className="hidden md:block">
                     {/* 1st Image */}
                     <div className=" w-full h-full z-10">
@@ -64,20 +91,37 @@ export default function AboutOverview() {
                         <Image src={images.aboutUs_Img3} priority quality={100} alt="About Modern Haven" className="object-top object-cover w-[200px] md:w-[250px] h-[300px] rounded-4xl" />
                     </div>
                 </div>
-
+        
             {/* Mobile View */}
-                <div className="md:hidden block">
-                <Image 
-                    key={currentImage} 
-                    priority
-                    quality={100}
-                    src={ImageList[currentImage].Image} alt={ImageList[currentImage].alt}  
-                    className="w-full h-fit object-cover object-top rounded-4xl" 
-                /> 
-                </div>
+            <div className="md:hidden block relative w-full h-[400px]">
+                <AnimatePresence mode="sync">
+                    <motion.div
+                    key={currentImage}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.7, ease: "easeInOut" }}
+                    className="absolute inset-0"
+                    >
+                    <Image
+                        key={currentImage}
+                        priority
+                        quality={100}
+                        src={ImageList[currentImage].Image}
+                        alt={ImageList[currentImage].alt}
+                        className="w-full h-full object-cover object-top rounded-4xl"
+                        fill
+                        sizes="(max-width: 768px) 100vw, 400px"
+                        style={{ objectFit: "cover", objectPosition: "top" }}
+                    />
+                    </motion.div>
+                </AnimatePresence>
+            </div>
             </div>
         </div>
 
        </section>
+       </motion.div>
+    </>
     )
 }

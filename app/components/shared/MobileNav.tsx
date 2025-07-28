@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
+import Session from "./Session";
 
 
 export default function MobileNav() {
@@ -65,6 +66,7 @@ export default function MobileNav() {
                                 const isActive = pathname === item.link;
                                 return (
                                     <Link
+                                    onClick={() => setIsMobileNavOpen(false)}
                                     key={index} 
                                     href={item.link} 
                                     className={` text-gray-500  hover:text-[#FFD700] transition-all duration-300 ${isActive ? "" : ""}`}>
@@ -74,16 +76,21 @@ export default function MobileNav() {
                                     </Link>
                                 )
                             })}
-                            <div>
-                            {AccountItem.map((item, index) => (
+                            <div 
+                            onClick={() => setIsMobileNavOpen(false)}
+                            className="mt-10">
+                            {/* {AccountItem.map((item, index) => (
                                 <div key={index} className="p-4">
-                                <button className="cursor-pointer ease-in-out transition-all duration-400 hover:bg-[#FFD700] hover:text-white w-full bg-[#0F2B22] text-white p-4 rounded-full">
+                                <button 
+                                onClick={() => setIsMobileNavOpen(false)}
+                                className="cursor-pointer ease-in-out transition-all duration-400 hover:bg-[#FFD700] hover:text-white w-full bg-[#0F2B22] text-white p-4 rounded-full">
                                 <Link href={item.href} className="text-gray-500 hover:text-[#FFD700] transition-all duration-300">
                                     {item.name}
                                 </Link>
                                 </button>
                                 </div>
-                            ))}
+                            ))} */}
+                            <Session />
                             </div>
 
                         </div>

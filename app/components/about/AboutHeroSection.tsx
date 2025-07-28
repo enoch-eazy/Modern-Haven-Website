@@ -1,18 +1,10 @@
-import Category from "../components/Homepage/Category";
-import { AboutImage } from "../components/models/ImagesList";
-import HeroSection from "../components/shared/HeroSection";
-import { sectionPadding } from "../styles/styles";
-import AboutOverview from "./AboutOverview";
-import CallToAction from "./CallToAction";
-import CoreValues from "./CoreValues";
-import OurPromise from "./OurPromise";
-import Image from "next/image";
 import images from "@/public/images";
+import Image from "next/image";
+import { sectionPadding } from "../../styles/styles";
 
-export default function AbouutPage() {
+export default function AboutHeroSection () {
     return (
-        <>
-           <div className={` mb-10 relative`}>
+        <div className={` mb-10 relative`}>
             {/* Overlay */}
             <div className="absolute top-0 left-0 w-full h-full bg-black/60"></div>
             {/* Image */}
@@ -38,13 +30,5 @@ export default function AbouutPage() {
                     {/* Please fill out the form below and we'll get back to you as soon as possible. */}
             </div>  
         </div>
-        <div>
-            <AboutOverview />
-            <CoreValues />
-            <Category />
-            <OurPromise />
-            <CallToAction />
-        </div>
-        </>
     )
 }

@@ -14,7 +14,8 @@ const getShops = async () => {
 }
 
 export default async function KidsShop() {
-    const { shops } = await getShops()
+    const data = await getShops();
+    const shops = data?.shops || [];
     return (
         <>
         {shops.map((item: any) => (

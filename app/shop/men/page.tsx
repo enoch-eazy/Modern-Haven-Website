@@ -31,7 +31,7 @@ export default function MenShop() {
             return;
         }
         try {
-            const res = await fetch("http://localhost:3000/api/shops/", {
+            const res = await fetch("https://modernhaven.vercel.app/api/shops/", {
                 method: "POST",
                 headers: {
                     "Content-type": "application/json",

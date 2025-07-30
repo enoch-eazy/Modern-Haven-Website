@@ -39,26 +39,33 @@ const CategorySection: React.FC<CategoryProps> = ({sectionTitle, categoryItem}) 
             <h1 className="text-2xl font-bold text-center text-[#0F2B22] mb-8" >{sectionTitle}</h1>
             <div className="flex flex-col md:grid md:grid-cols-3 gap-8 w-full">
                 {categoryItem.map((item, index) => (
-                    
                         <div 
-                        className="flex flex-col gap-3 items-center justify-center w-full bg-[#0F2B22] rounded-xl cursor-pointer">
-                            <Link href={item.href} key={index}>
+                        key={index}
+                        className="flex flex-col gap-3 items-center justify-center w-full bg-[#0F2B22] rounded-xl cursor-pointer group relative">
+                            <div className="pointer-events-none md:opacity-0 absolute top-0 left-0 w-full h-full bg-black/50 rounded-xl inset-0 group-hover:pointer-events-auto group-hover:opacity-90 transition-all duration-400 ease flex items-center justify-center">
+                            <h2 className=" font-bold text-white ">
+                                {item.Item}
+                            </h2>
+                            </div>
+                            <Link href={item.href} >
                                 <Image 
                                 src={item.image} 
                                 alt={item.Item}
                                 priority
                                 quality={100} 
-                                className="w-full h-[380px] object-cover object-top rounded-t-xl" />
+                                className="w-full md:w-[400px] md:h-[300px] object-cover object-top rounded-t-xl" />
                                 <div 
-                                className="flex flex-col gap-3 items-center justify-center w-full">
+                                className="flex flex-col gap-4 items-center justify-center w-full">
                                     <p 
-                                    className="font-bold text-center text-white">{item.Item}</p>
-                                            <button 
-                                            className="w-full hover:text-[#FFD700] hover:bg-black/80 transition-all duration-300 bg-black text-white px-10 py-2 rounded-b-xl cursor-pointer flex items-center justify-center gap-2">
-                                                <Link href="/shop/men" className="w-full">
+                                    className="opacity-0 md:opacity-100 my-0 md:my-4 font-bold text-center text-white group-hover:opacity-0 group-hover:my-0 group-hover:-translate-y-3 transition-all duration-400 ease-in">
+                                        {item.Item}
+                                    </p>
+                                            {/* <button 
+                                            className="w-full hover:text-[#FFD700] hover:bg-black/80 transition-all duration-300 bg-black text-white px-10 py-2 rounded-b-xl cursor-pointer flex items-center justify-center gap-2 mx-auto">
+                                                <Link href="/shop/men" className="justufy-center w-full flex items-center gap-4">
                                                     View More <Icons.Right />
                                                 </Link>
-                                            </button>
+                                            </button> */}
                                     </div>
                             </Link>
                         </div>

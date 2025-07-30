@@ -3,7 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "../ui/button";
 import { sectionPadding } from "../styles/styles";
-import KidsShop from "./kids/page";
+import KidsShop from "./getItem/page";
+import GetItem from "./getItem/page";
 
 
 export default function ShopPage() {
@@ -14,13 +15,13 @@ export default function ShopPage() {
                     <Image src={images.logo} alt="Logo" className="w-14 h-14 invert"/>
                 </Link>
                     <Button >
-                    <Link href={"/shop/men"}>
+                    <Link href={"/shop/addItem"}>
                         Add Shop
                     </Link>
                     </Button>
            </div>
            <div>
-                <KidsShop />
+                <GetItem />
            </div>
         </main>
     )

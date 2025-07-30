@@ -30,7 +30,9 @@ export default function RootLayout({ children }: Readonly<{
           className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
           <Providers>
-            <Layout>{children}</Layout>
+            <Layout>
+              {children}
+            </Layout>
           </Providers>
         </body>
       </html>

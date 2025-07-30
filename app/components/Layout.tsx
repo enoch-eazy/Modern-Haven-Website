@@ -47,6 +47,8 @@ export default function Layout({ children }: Props) {
               width={100}
               height={100}
               src={images.logo}
+              priority
+              quality={100}
               alt="logo"
               className="w-full h-full border-none object-contain"
             />

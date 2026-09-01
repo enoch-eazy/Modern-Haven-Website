@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node \"C:\\\\Users\\\\xownl\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-xownl-OneDrive-Desktop-Personal-portfolio\\\\11706521-d7d7-4ad2-8ac8-36e4ac717a46\\\\scratchpad\\\\find_name.mjs\")",
+      "Bash(node _tmp_find_name.mjs)",
+      "Bash(node _tmp_check_mongo.mjs)",
+      "Bash(rm -f _tmp_check_mongo.mjs)",
+      "Bash(node -e \"console.log\\(require\\('crypto'\\).randomBytes\\(32\\).toString\\('base64'\\)\\)\")",
+      "Bash(mkdir -p /tmp/docx_extract)",
+      "Bash(cp \"/c/Users/xownl/Downloads/Masters_Abroad_Career_Action_Plan.docx\" ./doc.zip)",
+      "Bash(unzip -o -q doc.zip -d extracted)",
+      "Bash(mkdir -p /c/Users/xownl/AppData/Local/Temp/claude/c--Users-xownl-OneDrive-Desktop-Personal-portfolio/8ff54182-ade6-460c-8d36-b79f1d5ea8e5/scratchpad/docx_extract)",
+      "Bash(cp /c/Users/xownl/Downloads/Masters_Abroad_Career_Action_Plan.docx /c/Users/xownl/AppData/Local/Temp/claude/c--Users-xownl-OneDrive-Desktop-Personal-portfolio/8ff54182-ade6-460c-8d36-b79f1d5ea8e5/scratchpad/docx_extract/doc.zip)",
+      "Bash(SCRATCH=\"/c/Users/xownl/AppData/Local/Temp/claude/c--Users-xownl-OneDrive-Desktop-Personal-portfolio/8ff54182-ade6-460c-8d36-b79f1d5ea8e5/scratchpad\" *)",
+      "Bash(python /c/Users/xownl/AppData/Local/Temp/claude/c--Users-xownl-OneDrive-Desktop-Personal-portfolio/8ff54182-ade6-460c-8d36-b79f1d5ea8e5/scratchpad/docx_extract/parse.py)",
+      "Bash(python /c/Users/xownl/AppData/Local/Temp/claude/c--Users-xownl-OneDrive-Desktop-Personal-portfolio/8ff54182-ade6-460c-8d36-b79f1d5ea8e5/scratchpad/docx_extract/parse_tables.py)",
+      "Bash(python -c ' *)",
+      "Bash('/c/Program Files \\(x86\\)/Microsoft/Edge/Application/msedge.exe' --headless=new --disable-gpu --no-pdf-header-footer '--print-to-pdf=C:\\\\Users\\\\xownl\\\\Downloads\\\\Masters_Abroad_Career_Action_Plan.pdf' --print-to-pdf-no-header file:///C:/Users/xownl/AppData/Local/Temp/claude/c--Users-xownl-OneDrive-Desktop-Personal-portfolio/8ff54182-ade6-460c-8d36-b79f1d5ea8e5/scratchpad/career_plan.html)",
+      "Bash(echo \"exit: $?\")",
+      "Bash('/c/Program Files \\(x86\\)/Microsoft/Edge/Application/msedge.exe' --headless=new --disable-gpu --window-size=900,1400 '--screenshot=C:\\\\Users\\\\xownl\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\c--Users-xownl-OneDrive-Desktop-Personal-portfolio\\\\8ff54182-ade6-460c-8d36-b79f1d5ea8e5\\\\scratchpad\\\\preview.png' file:///C:/Users/xownl/AppData/Local/Temp/claude/c--Users-xownl-OneDrive-Desktop-Personal-portfolio/8ff54182-ade6-460c-8d36-b79f1d5ea8e5/scratchpad/career_plan.html)",
+      "Bash('/c/Program Files \\(x86\\)/Microsoft/Edge/Application/msedge.exe' --headless=new --disable-gpu --window-size=900,1400 --screenshot=C:/Users/xownl/AppData/Local/Temp/claude/c--Users-xownl-OneDrive-Desktop-Personal-portfolio/8ff54182-ade6-460c-8d36-b79f1d5ea8e5/scratchpad/preview.png file:///C:/Users/xownl/AppData/Local/Temp/claude/c--Users-xownl-OneDrive-Desktop-Personal-portfolio/8ff54182-ade6-460c-8d36-b79f1d5ea8e5/scratchpad/career_plan.html)",
+      "Bash(rm -f \"/c/Users/xownl/AppData/Local/Temp/claude/c--Users-xownl-OneDrive-Desktop-Personal-portfolio/8ff54182-ade6-460c-8d36-b79f1d5ea8e5/scratchpad/preview.png\" *)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\xownl\\AppData\\Local\\Temp\\claude\\c--Users-xownl-OneDrive-Desktop-Personal-portfolio\\8ff54182-ade6-460c-8d36-b79f1d5ea8e5\\scratchpad\\docx_extract",
+      "C:\\Users\\xownl\\AppData\\Local\\Temp\\claude\\c--Users-xownl-OneDrive-Desktop-Personal-portfolio\\8ff54182-ade6-460c-8d36-b79f1d5ea8e5\\scratchpad"
+    ]
+  }
+}

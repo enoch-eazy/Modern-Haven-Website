@@ -52,7 +52,7 @@ export default function AddItem() {
     return (
         <section className={`ml-10 mt-10 mb-10 py-20`}>
             <div 
-            onClick={() => ApplicationRoutes.Shop}
+        onClick={() => ApplicationRoutes.Shop}
             className="flex items-center gap-4 font-bold text-xl cursor-pointer ">
                 <Icons.ArrowLeft />
                 Back

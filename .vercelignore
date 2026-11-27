@@ -1,0 +1,3 @@
+# The Express API is deployed on its own (see api/README.md).
+# Without this, Vercel treats a root-level api/ folder as serverless functions.
+api

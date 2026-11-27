@@ -1,16 +1,13 @@
 import images from "@/public/images";
 import AboutCard from "./AboutCard";
-import React from "react";
 
-const AboutSection: React.FC = () => {
+export default function AboutSection() {
     return (
-        <section>
-            <AboutCard 
-            sectionTitle="About Modern Haven" 
-            image={images.AboutModern_Img} 
-            paragraph1="Modern Haven is where fashion meets lifestyle for the modern family. We bring together curated collections of men’s and women’s wear, stylish accessories, and fun gadgets for kids and teens—all in one seamless shopping experience. Whether you're upgrading your wardrobe, finding the perfect gift, or discovering the latest tech toys, Modern Haven helps you shop smart, live stylishly, and enjoy life’s little moments." 
-            paragraph2="Our passion is creating a space where style, quality, and family values come together effortlessly. From timeless fashion essentials to playful gadgets, we believe shopping should be easy, inspiring, and inclusive. Welcome to Modern Haven — your trusted destination for fashion and lifestyle for every member of the family." />
-        </section>
-    )
+        <AboutCard
+            sectionTitle="About Modern Haven"
+            image={images.AboutModern_Img}
+            paragraph1="Modern Haven is where tech meets style for the modern family. We bring together gadgets, from gaming consoles and controllers to watches and fitness gear, alongside curated clothing for men, women, kids, and teens. Upgrading your wardrobe, finding the perfect gift, or grabbing the latest gadget? It's all in one place."
+            paragraph2="We're a small, growing Lagos shop, and we pick every product with care. Shopping should be easy, inspiring, and personal, so if you can't find something you're looking for, just ask us."
+        />
+    );
 }
-export default AboutSection;

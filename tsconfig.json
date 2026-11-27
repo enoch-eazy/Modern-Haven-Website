@@ -31,13 +31,12 @@
   "include": [
     "**/*.ts",
     "**/*.tsx",
-    "app/api/shops/[id]/route.ts",
-    "lib/mongodb.ts",
     "next-env.d.ts",
     ".next/types/**/*.ts"
   ],
   "exclude": [
     "node_modules",
-    ".next"
+    ".next",
+    "api"
   ]
 }

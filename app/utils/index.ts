@@ -1,119 +1,92 @@
+import { createElement } from "react"
+import { FaInstagram, FaLinkedinIn, FaXTwitter } from "react-icons/fa6"
+import { HiOutlineEnvelope, HiOutlineMapPin, HiOutlinePhone } from "react-icons/hi2"
 import images from "@/public/images"
-import { Icons } from "../ui/icons"
 import { ApplicationRoutes } from "../components/constant/applicationRoutes"
 
-export const Otherpages = [
-    {
-        name: "Home",
-        link: "/",
-    },
-    {
-        name: "About",
-        link: ApplicationRoutes.About,
-    },
-    {
-        name: "Contact",
-        link: "/contact",
-    },
+/** Main navigation, shown in the header. */
+export const MainNav = [
+    { name: "Shop all", link: ApplicationRoutes.Shop },
+    { name: "Gadgets", link: ApplicationRoutes.Gadgets },
+    { name: "Men", link: ApplicationRoutes.Men },
+    { name: "Women", link: ApplicationRoutes.Women },
+    { name: "Kids & Teens", link: ApplicationRoutes.Kids },
+    { name: "About", link: ApplicationRoutes.About },
+    { name: "Contact", link: ApplicationRoutes.Contact },
 ]
-export const Footercontent = [
-    {
-        name: "Home",
-        link: "/",
-    },
-    {
-        name: "About",
-        link: "/about",
-    },
-    {
-        name: "Contact",
-        link: "/contact",
-    },
-    {
-        name: "Shop",
-        link: "/shop",
-    }
+
+export const FooterShopLinks = [
+    { name: "All products", link: ApplicationRoutes.Shop },
+    { name: "Gadgets", link: ApplicationRoutes.Gadgets },
+    { name: "Clothing", link: ApplicationRoutes.Clothing },
+    { name: "Men", link: ApplicationRoutes.Men },
+    { name: "Women", link: ApplicationRoutes.Women },
+    { name: "Kids & Teens", link: ApplicationRoutes.Kids },
 ]
-export const Shop = [
-    {
-        name: "Shop",
-        Icons: Icons.Dropdown({ className: "w-6 h-6" }),
-        submenu: [
-            {
-                name: "Men",
-                link: "/men",
-            },
-            {
-                name: "Women",
-                link: "/women",
-            },
-            {
-                name: "Kids & Teens",
-                link: "/kids",
-            },
-        ]
-    }
+
+export const FooterHelpLinks = [
+    { name: "About us", link: ApplicationRoutes.About },
+    { name: "Contact", link: ApplicationRoutes.Contact },
+    { name: "My orders", link: ApplicationRoutes.Orders },
+    { name: "Cart", link: ApplicationRoutes.Cart },
 ]
 
 export const Contact = [
     {
-        name: "+2349073410982",
+        name: "+234 907 341 0982",
         href: "tel:+2349073410982",
-        icons: Icons.Phone({ className: "w-4 h-4" })
+        icons: createElement(HiOutlinePhone, { className: "size-4" })
     },
     {
         name: "jesulanaenoch@gmail.com",
         href: "mailto:jesulanaenoch@gmail.com",
-        icons: Icons.Mail({ className: "w-4 h-4" })
+        icons: createElement(HiOutlineEnvelope, { className: "size-4" })
     },
     {
         name: "25 Fadare Street, Mile 12, Lagos, Nigeria",
         href: "https://maps.app.goo.gl/SYgvtehGYS3Btdk16",
-        icons: Icons.Location({ className: "w-4 h-4" })
+        icons: createElement(HiOutlineMapPin, { className: "size-4" })
     },
 ]
 
 export const Socials = [
-    // {
-    //     name: "Facebook",
-    //     href: "https://www.facebook.com/profile.php?id=100091000000000",
-    //     icons: Icons.Facebook({ className: "" })
-    // },
     {
         name: "Instagram",
         href: "https://www.instagram.com/eazy_enoch?igsh=aXJhdGlxdGcwd2o0",
-        icons: Icons.Instagram({ className: "w-10 h-10" })
+        icons: createElement(FaInstagram, { className: "size-5" })
     },
     {
-        name: "Twitter",
+        name: "X (Twitter)",
         href: "https://x.com/Eazy_Enoch",
-        icons: Icons.Twitter({ className: "w-10 h-10" })
+        icons: createElement(FaXTwitter, { className: "size-4" })
     },
     {
         name: "LinkedIn",
         href: "https://www.linkedin.com/in/enoch-jesulana",
-        icons: Icons.Linkedin({ className: "w-10 h-10" })
+        icons: createElement(FaLinkedinIn, { className: "size-4" })
     }
 ]
-export const AccountItem = [
-    { name: "Login", href: "/login" },
-    { name: "Sign Up", href: "/signup" }
-];
 
 export const NewSection = [
     {
         name: "New Arrivals",
-        button: "SHOP THE LATEST",
+        description: "Fresh drops in tech and fashion.",
+        button: "Shop the latest",
+        href: "/shop?sort=newest",
         image: images.NewArrivals_Img,
     },
     {
         name: "Best-Sellers",
-        button: "SHOP YOUR FAVORITES",
+        description: "The picks everyone keeps coming back for.",
+        button: "Shop favourites",
+        href: "/shop?featured=true",
         image: images.BestSellers_Img,
     },
     {
         name: "Trending Now",
-        button: "SHOP THE TRENDS",
+        description: "What the family is loving this season.",
+        button: "Shop the trends",
+        href: "/shop",
         image: images.Trending_Img,
     }
 ]

@@ -21,13 +21,13 @@ const TestimonialSection: React.FC<TestimonialProps> = ({sectionTitle, testimoni
     };
 
     return (
-        <section className={`mt-10 mb-20 bg-[#0F2B22] py-10`}>
+        <section className="bg-brand-900 py-16 md:py-24">
             <div className={`${sectionPadding}`}>
                 <motion.h1 
                     initial={{ opacity: 0, y: -20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6 }}
-                    className="text-2xl font-bold text-center text-white mb-8"
+                    className="mb-12 text-center text-2xl font-bold tracking-tight text-white md:text-4xl"
                 >
                     {sectionTitle}
                 </motion.h1>
@@ -43,7 +43,7 @@ const TestimonialSection: React.FC<TestimonialProps> = ({sectionTitle, testimoni
                                 duration: 0.8,
                                 ease: [0.4, 0.0, 0.2, 1]
                             }}
-                            className="flex flex-col md:flex-row justify-between gap-12"
+                            className="flex flex-col items-center justify-between gap-12 md:flex-row"
                         >
                             <motion.div 
                                 className="flex flex-col gap-4 justify-evenly w-full"
@@ -56,11 +56,11 @@ const TestimonialSection: React.FC<TestimonialProps> = ({sectionTitle, testimoni
                                     animate={{ scale: 1, rotate: 0 }}
                                     transition={{ duration: 0.5, delay: 0.3 }}
                                 >
-                                    <Icons.Quote className="w-20 h-20 text-white"/>
+                                    <Icons.Quote className="h-12 w-12 text-gold-400"/>
                                 </motion.div>
                                 
                                 <motion.p 
-                                    className="text-white w-full md:w-[300px] font-bold text-lg leading-relaxed"
+                                    className="w-full max-w-xl text-xl font-medium leading-relaxed text-white md:text-2xl"
                                     initial={{ opacity: 0, y: 20 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     transition={{ duration: 0.6, delay: 0.4 }}
@@ -69,7 +69,7 @@ const TestimonialSection: React.FC<TestimonialProps> = ({sectionTitle, testimoni
                                 </motion.p>
                                 
                                 <motion.h2 
-                                    className="text-2xl font-bold text-white"
+                                    className="text-lg font-semibold text-gold-400"
                                     initial={{ opacity: 0, x: -20 }}
                                     animate={{ opacity: 1, x: 0 }}
                                     transition={{ duration: 0.5, delay: 0.6 }}
@@ -91,9 +91,8 @@ const TestimonialSection: React.FC<TestimonialProps> = ({sectionTitle, testimoni
                                     <Image 
                                         src={testimonials[currentTestimonial].image} 
                                         alt={testimonials[currentTestimonial].name} 
-                                        priority
-                                        quality={100}
-                                        className="w-[400px] h-[450px] object-cover object-top rounded-xl shadow-2xl" 
+                                        sizes="(min-width: 768px) 400px, 90vw"
+                                        className="h-[360px] w-full max-w-[400px] rounded-3xl object-cover object-top shadow-2xl md:h-[450px] md:w-[400px]"
                                     />
                                 </motion.div>
                             </motion.div>  

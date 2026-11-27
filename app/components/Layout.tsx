@@ -1,60 +1,24 @@
 "use client";
-import React, { ReactNode, useContext, useEffect, useState } from "react";
-import Image from "next/image";
-// import Navbar from "./shared/TopBar";
-import images from "../../public/images";
+
 import { Toaster } from "sonner";
 import Navbar from "./shared/Navbar";
 import Footer from "./shared/Footer";
-type Props = {
-  children: ReactNode;
-};
 
-export default function Layout({ children }: Props) {
-  const [loaderIsVisible, setLoaderIsVisible] = useState(true);
-  const iswindow = typeof window !== "undefined" ? true : false;
-
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setLoaderIsVisible(false);
-    }
-  }, [iswindow]);
-
-  return (
-    <div>
-      {!loaderIsVisible && (
-        <div>
-          <Toaster
-            position="bottom-center"
-            richColors
-            closeButton
-            toastOptions={{
-              duration: 3000,
-              unstyled: false,
-            }}
-          />
-          <div className="flex flex-col min-h-screen w-full justify-between">
+export default function Layout({ children }: { children: React.ReactNode }) {
+    return (
+        <div className="flex min-h-screen flex-col">
+            <a
+                href="#main"
+                className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:shadow"
+            >
+                Skip to content
+            </a>
+            <Toaster position="bottom-center" richColors closeButton toastOptions={{ duration: 3500 }} />
             <Navbar />
-            <div>{children}</div>
+            <main id="main" className="flex-1">
+                {children}
+            </main>
             <Footer />
-          </div>
         </div>
-      )}
-      {loaderIsVisible && (
-        <div className="w-[100vw] h-[100vh] min-h-[100vh] grid place-items-center bg-white">
-          <div className="w-44 h-40 border-white border">
-            <Image
-              width={100}
-              height={100}
-              src={images.logo}
-              priority
-              quality={100}
-              alt="logo"
-              className="w-full h-full border-none object-contain"
-            />
-          </div>
-        </div>
-      )}
-    </div>
-  );
+    );
 }

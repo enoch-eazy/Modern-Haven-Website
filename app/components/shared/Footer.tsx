@@ -1,87 +1,82 @@
-import { sectionPadding } from "@/app/styles/styles";
-import images from "@/public/images";
-import Link from "next/link";
 import Image from "next/image";
-import { Contact, Socials, Footercontent } from "@/app/utils";
-import MobileFooter from "./MobileFooter";
+import Link from "next/link";
+import images from "@/public/images";
+import { sectionPadding } from "@/app/styles/styles";
+import { Contact, FooterHelpLinks, FooterShopLinks, Socials } from "@/app/utils";
+
+function LinkColumn({ title, links }: { title: string; links: { name: string; link: string }[] }) {
+    return (
+        <div>
+            <h2 className="text-sm font-semibold uppercase tracking-wider text-gold-400">{title}</h2>
+            <ul className="mt-4 space-y-3 text-sm">
+                {links.map((item) => (
+                    <li key={item.link}>
+                        <Link href={item.link} className="text-white/75 transition-colors hover:text-white">
+                            {item.name}
+                        </Link>
+                    </li>
+                ))}
+            </ul>
+        </div>
+    );
+}
 
 export default function Footer() {
     return (
-        <>
-        <footer className="bg-[#0F2B22] text-white py-4 hidden md:block">
-            <div className={`${sectionPadding} `}>
-                <div className="flex flex-col md:flex-row md:justify-between gap-4 py-4">
-                    <div className="flex flex-col gap-4 pr-4">
-                        <Link href="/">
-                            <Image src={images.logo} alt="Modern Fashion & Family" width={100} height={100} className="invert"/>
-                        </Link>
-                        <p className="text-white w-full md:w-[350px]">
-                        Bringing style, comfort, and tech together for men, women, and kids. From timeless fashion pieces to smart gadgets, we’re your one-stop destination for the whole family
-                        </p>    
-                    </div>
-                    {/* Other Pages  */}
-                    <div className="flex flex-col gap-4 pr-4">
-                        <h2 className="text-white  font-bold">Other Pages</h2>
-                        <ul className="flex flex-col gap-4 text-sm">
-                            {Footercontent.map((page, index) => (
-                                <li key={index}>
-                                    <Link href={page.link} className="text-white hover:text-[#FFD700] transition-all duration-300">{page.name}</Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Account  */}
-                    {/* <div className="flex flex-col gap-4 pr-4">
-                        <h2 className="text-white text-center font-bold">Account</h2>
-                        <ul className="flex flex-col gap-4 text-sm">
-                            {AccountItem.map((account, index) => (
-                                <li key={index}>
-                                    <Link href={account.href} className="text-white hover:text-[#FFD700] transition-all duration-300 flex items-center gap-2">
-                                        {account.name} 
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div> */}
-
-                    {/* Contact Us  */}
-                    <div className="flex flex-col gap-4 pr-4">
-                        <h2 className="text-white  font-bold">Contact Us</h2>
-                        <ul className="flex flex-col gap-4 text-sm">
-                            {Contact.map((contact, index) => (
-                                <li key={index}>
-                                    <Link target="_blank" href={contact.href} className="text-white hover:text-[#FFD700] transition-all duration-300 flex items-center gap-2">
-                                        {contact.icons} {contact.name}
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-                </div>
-
-                {/* Social Media  */}
-                <div className="flex flex-col gap-4">
-                        <h2 className="text-white text-center font-bold">Follow Us</h2>
-                        <ul className="flex flex-row gap-4 text-sm justify-center">
-                            {Socials.map((social, index) => (
-                                <li key={index}>
-                                    <Link target="_blank" href={social.href} className="text-white hover:text-[#FFD700] transition-all duration-300 flex items-center gap-2">
-                                        {social.icons} 
-                                    </Link>
-                                </li>
-                            ))}
-                        </ul>
-                </div>
-
-                <div className="mt-8 border-t border-[#FFD700] pt-4">
-                    <p className="text-center text-sm">
-                        &copy; {new Date().getFullYear()} Modern Fashion & Family. All rights reserved.
+        <footer className="bg-brand-950 text-white">
+            <div className={`${sectionPadding} grid gap-10 py-14 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.3fr]`}>
+                <div className="sm:col-span-2 lg:col-span-1">
+                    <Link href="/" aria-label="Modern Haven home" className="inline-block rounded-2xl bg-white p-2">
+                        <Image src={images.logo} alt="Modern Haven" className="h-12 w-auto" />
+                    </Link>
+                    <p className="mt-4 max-w-sm text-sm leading-relaxed text-white/70">
+                        Gadgets and clothing for the whole family, from consoles and watches to everyday fashion for men,
+                        women, and kids. All in one cart.
                     </p>
+                    <ul className="mt-6 flex gap-3">
+                        {Socials.map((social) => (
+                            <li key={social.name}>
+                                <Link
+                                    href={social.href}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label={social.name}
+                                    className="grid size-10 place-items-center rounded-full bg-white/10 text-white transition-colors hover:bg-gold-400 hover:text-brand-950"
+                                >
+                                    {social.icons}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+
+                <LinkColumn title="Shop" links={FooterShopLinks} />
+                <LinkColumn title="Help" links={FooterHelpLinks} />
+
+                <div>
+                    <h2 className="text-sm font-semibold uppercase tracking-wider text-gold-400">Get in touch</h2>
+                    <ul className="mt-4 space-y-3 text-sm">
+                        {Contact.map((item) => (
+                            <li key={item.href}>
+                                <Link
+                                    href={item.href}
+                                    target={item.href.startsWith("http") ? "_blank" : undefined}
+                                    rel="noopener noreferrer"
+                                    className="flex items-start gap-3 text-white/75 transition-colors hover:text-white"
+                                >
+                                    <span className="mt-0.5 shrink-0">{item.icons}</span>
+                                    {item.name}
+                                </Link>
+                            </li>
+                        ))}
+                    </ul>
                 </div>
             </div>
+            <div className="border-t border-white/10">
+                <p className={`${sectionPadding} py-6 text-center text-xs text-white/50`}>
+                    &copy; {new Date().getFullYear()} Modern Haven. Made in Lagos.
+                </p>
+            </div>
         </footer>
-         <MobileFooter />
-         </>
-    )
+    );
 }

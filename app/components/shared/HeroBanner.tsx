@@ -1,29 +1,27 @@
-import Button from "@/app/ui/button";
-import images from "@/public/images";
 import Image from "next/image";
-import Link from "next/link";
+import images from "@/public/images";
+import Button from "@/app/ui/button";
+import { sectionPadding } from "@/app/styles/styles";
 
 export default function HeroBanner() {
     return (
-    <div className={`md:px-[8%] relative mt-12 mb-20 md:mt-32 md:mb-20`}>
-      <div className="md:h-[264px] h-fit w-full md:py-0 py-8 bg-gradient-to-r from-[#0F2B22] to-[#FFD700]/80 flex items-center md: gap-12 md:px-16 px-4 md:rounded-3xl ">
-        <div className=" md:block hidden -translate-y-[48px]">
-            <Image src={images.man} alt="man" />
-        </div>
-        <div className="flex w-full md:w-1/2 flex-col gap-2">
-          <h3 className="text-xl md:text-2xl text-white md:px-0 px-8 md:text-start text-center font-bold">
-            Have a Question? We're Here to Help!
-          </h3>
-          <p className="text-white md:text-sm text-xs md:mt-0 mt-2 md:text-start text-center ">
-          Got inquiries about our products, orders, or anything else? Reach out to our team and we'll assist you with the right answers. Whether you're shopping for men's fashion, women's wear, or kids' gadgets, we're always ready to help you make the best choice.
-          </p>
-          <Link href="/contact">
-            <Button className="w-full mt-4">
-                Make Enquiry
-            </Button>
-          </Link>
-        </div>
-      </div>
-    </div>
-    )
+        <section className={`${sectionPadding} py-16 md:pb-24 md:pt-28`}>
+            <div className="relative flex items-center gap-10 overflow-visible rounded-3xl bg-gradient-to-br from-brand-900 via-brand-800 to-brand-600 px-6 py-12 md:px-14 md:py-14">
+                <div className="pointer-events-none absolute -right-16 -top-16 size-64 rounded-full bg-gold-400/20 blur-3xl" aria-hidden="true" />
+                <div className="hidden shrink-0 md:block md:-my-28">
+                    <Image src={images.man} alt="" className="h-72 w-auto" />
+                </div>
+                <div className="relative max-w-xl text-center text-white md:text-left">
+                    <h2 className="text-2xl font-bold tracking-tight md:text-3xl">Have a question? We&apos;re here to help.</h2>
+                    <p className="mt-3 text-sm text-white/80 md:text-base">
+                        Ask us about a product, an order, or delivery to your area. Whether it&apos;s a new console or a
+                        new outfit, we&apos;ll help you pick the right one.
+                    </p>
+                    <Button link="/contact" variant="accent" size="lg" className="mt-6">
+                        Make an enquiry
+                    </Button>
+                </div>
+            </div>
+        </section>
+    );
 }

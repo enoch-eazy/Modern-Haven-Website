@@ -1,45 +1,32 @@
-"use client";
-import { sectionPadding } from "@/app/styles/styles";
-import Button from "@/app/ui/button";
-import { NewSection } from "@/app/utils";
-import images from "@/public/images";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { HiArrowRight } from "react-icons/hi2";
+import { NewSection } from "@/app/utils";
+import { sectionEyebrow, sectionPadding, sectionTitle } from "@/app/styles/styles";
 
 export default function NewArrivals() {
-    const router = useRouter();
     return (
-        <section className={`${sectionPadding} py-10`}>
-                <h2 
-                className="text-2xl font-bold text-center text-[#0F2B22] mb-4">
-                    New Arrivals For You
-                </h2>
-                <p className="text-center text-[#0F2B22] mb-8">
-                    Discover our latest arrivals and stay ahead of the fashion curve.
-                </p>
-                <div className="flex flex-col md:flex-row gap-4">
-                    {NewSection.map((item, index) => (
-                        <div key={index} className="relative w-full">
-                        <Image 
-                        priority
-                        quality={100}
-                        src={item.image} alt={item.name} 
-                        className="w-full h-[450px] object-cover rounded-xl" />
-                        <div className="absolute top-0 left-0 w-full h-full bg-black/50 rounded-xl"></div>
-                        <div className="flex flex-col gap-4 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full">
-                            <h3 className="text-[18px] font-bold text-center text-white">
-                                {item.name}
-                            </h3>
-                            <Button
-                                className="w-40 mx-auto"
-                                onClick={() => router.push("/shop")}
-                            >
-                                <span className="text-xs">{item.button}</span>
-                            </Button>
+        <section className={`${sectionPadding} py-16 md:py-24`} aria-labelledby="collections-heading">
+            <div className="mb-10 text-center">
+                <p className={sectionEyebrow}>Collections</p>
+                <h2 id="collections-heading" className={`${sectionTitle} mt-2`}>Find your next favourite</h2>
+                <p className="mx-auto mt-3 max-w-lg text-gray-600">Discover our latest arrivals and stay ahead of the curve, in fashion and in tech.</p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-3 md:gap-6">
+                {NewSection.map((item) => (
+                    <Link key={item.name} href={item.href} className="group relative isolate flex h-[420px] overflow-hidden rounded-3xl bg-brand-900">
+                        <Image src={item.image} alt="" fill sizes="(min-width: 768px) 33vw, 100vw" placeholder="blur" className="-z-20 object-cover transition-transform duration-700 group-hover:scale-105" />
+                        <div className="absolute inset-0 -z-10 bg-gradient-to-t from-brand-950/90 via-brand-950/20 to-transparent" />
+                        <div className="mt-auto p-6 text-white md:p-8">
+                            <h3 className="text-2xl font-bold">{item.name}</h3>
+                            <p className="mt-1 text-sm text-white/80">{item.description}</p>
+                            <span className="mt-5 inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-brand-900 transition-colors group-hover:bg-gold-400">
+                                {item.button} <HiArrowRight />
+                            </span>
                         </div>
-                    </div>
-                    ))}
-                </div>
+                    </Link>
+                ))}
+            </div>
         </section>
-    )
+    );
 }

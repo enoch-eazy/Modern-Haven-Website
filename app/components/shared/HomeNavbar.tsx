@@ -1,37 +1,37 @@
-"use client"
-import { sectionPadding } from "@/app/styles/styles";
+"use client";
+
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { sectionPadding } from "@/app/styles/styles";
 
+const items = [
+    { name: "Men", link: "/men" },
+    { name: "Women", link: "/women" },
+    { name: "Kids & Teens", link: "/kids" },
+    { name: "Gadgets", link: "/shop?category=gadgets" },
+];
+
+/** Department tabs shown at the top of the Men / Women / Kids pages. */
 export default function HomeNavbar() {
     const pathname = usePathname();
-
-    const NavItem = [
-        { name: "Men", link: "/men" },
-        { name: "Women", link: "/women" },
-        { name: "Kids & Teens", link: "/kids" }
-    ];
-
     return (
-        <section className={`bg-[#0F2B22] text-gray-500 mt-18`}>
-            <div className={`${sectionPadding} flex items-center pt-2`}>
-                <div className="flex justify-center items-center">
-                    {NavItem.map((item, index) => (
-                        <div
-                            className={`py-4 px-6 ${pathname === item.link ? "border-b-2 border-[#FFD700]" : "border-b-2 border-transparent"}`}
-                            key={index}
-                        >
-                            <Link href={item.link}>
-                                <span
-                                    className={`cursor-pointer ${pathname === item.link ? "font-bold text-[#FFD700]" : ""}`}
-                                >
-                                    {item.name}
-                                </span>
+        <nav aria-label="Departments" className="border-b border-gray-200 bg-white">
+            <ul className={`${sectionPadding} flex gap-2 overflow-x-auto py-3 no-scrollbar`}>
+                {items.map((item) => {
+                    const active = pathname === item.link;
+                    return (
+                        <li key={item.link} className="shrink-0">
+                            <Link
+                                href={item.link}
+                                aria-current={active ? "page" : undefined}
+                                className={`block rounded-full px-5 py-2 text-sm font-semibold transition-colors ${active ? "bg-brand-900 text-white" : "text-gray-600 hover:bg-brand-50 hover:text-brand-900"}`}
+                            >
+                                {item.name}
                             </Link>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
+                        </li>
+                    );
+                })}
+            </ul>
+        </nav>
     );
 }

@@ -1,40 +1,40 @@
-
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Layout from "./components/Layout";
 import Providers from "./Providers";
 
 const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+    variable: "--font-geist-sans",
+    subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+    variable: "--font-geist-mono",
+    subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "Modern Haven Website",
-  description: "Modern Haven is your one-stop shop for stylish men’s and women’s fashion, plus gadgets and trendy wear for kids & teens — all in one place for the modern family",
+    title: {
+        default: "Modern Haven | Gadgets & Fashion for the Modern Family",
+        template: "%s | Modern Haven",
+    },
+    description:
+        "Modern Haven is a one-stop shop for gadgets and clothing: consoles, watches and fitness gear alongside men's, women's, and kids' fashion. Delivering in Lagos.",
 };
 
-export default function RootLayout({ children }: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-  
-      <html lang="en" suppressHydrationWarning>
-        <body suppressHydrationWarning
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          <Providers>
-            <Layout>
-              {children}
-            </Layout>
-          </Providers>
-        </body>
-      </html>
-  );
+export const viewport: Viewport = {
+    themeColor: "#0f2b22",
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+    return (
+        <html lang="en" suppressHydrationWarning>
+            <body suppressHydrationWarning className={`${geistSans.variable} ${geistMono.variable} font-sans antialiased`}>
+                <Providers>
+                    <Layout>{children}</Layout>
+                </Providers>
+            </body>
+        </html>
+    );
 }

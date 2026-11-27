@@ -1,34 +1,40 @@
-"use client"
+import type { Metadata } from "next";
+import images from "@/public/images";
 import HomeNavbar from "../components/shared/HomeNavbar";
 import AboutCard from "../components/Homepage/AboutCard";
-import images from "@/public/images";
 import HeroSection from "../components/shared/HeroSection";
 import { ImageKidsCarousel } from "../components/models/ImagesList";
 import TestimonialSection from "../components/Homepage/TestimonialSection";
-import { TestimonialsKids, TestimonialsMale } from "../components/models/Testimonial";
+import { TestimonialsKids } from "../components/models/Testimonial";
 import CategorySection from "../components/Homepage/CategorySection";
 import { CategoryItemKids } from "../components/models/Category";
 import HeroBanner from "../components/shared/HeroBanner";
 
-export default function Kids() {
-    
-    return (
-        <main>
-            <HomeNavbar />
-            <HeroSection 
-            plaintitle="Your" 
-            highlightedtitle="Cozy Era" 
-            description="Get peak comfy-chic with new winter essentials" 
-            image={ImageKidsCarousel} />
-            <AboutCard 
-            sectionTitle="About Kids's fashion" 
-            image={images.aboutKid_Img} 
-            paragraph1="At Modern Haven, we believe style starts young. Our Kids and Teenage Fashion collection is designed to help the next generation express their individuality with confidence and comfort. Whether it’s playful prints for toddlers or trendy streetwear for teens, we offer a wide range of outfits that blend style, durability, and fun." 
-            paragraph2="From school days to weekend adventures, our fashion pieces are made to fit every moment of growing up. We carefully curate clothing and accessories that celebrate youth culture, keeping your young ones looking fresh, feeling confident, and ready to take on the world — one outfit at a time." />
-            <CategorySection sectionTitle="Category" categoryItem={CategoryItemKids} />
-            <TestimonialSection sectionTitle="Testimonials" testimonials={TestimonialsKids} />
-            <HeroBanner /> 
-        </main>
+export const metadata: Metadata = { title: "Kids & Teens" };
 
-    )
+export default function Kids() {
+    return (
+        <>
+            <HomeNavbar />
+            <HeroSection
+                eyebrow="Kids & Teens"
+                plaintitle="Play hard,"
+                highlightedtitle="look fresh"
+                description="Consoles, controllers, and toys, plus hoodies, tees, and sneakers built for growing up."
+                image={ImageKidsCarousel}
+                primaryCta={{ label: "Shop kids & teens", href: "/shop?audience=kids" }}
+                secondaryCta={{ label: "Games & consoles", href: "/shop?audience=kids&category=gadgets" }}
+            />
+            <CategorySection sectionTitle="Shop kids' & teens' categories" categoryItem={CategoryItemKids} />
+            <AboutCard
+                sectionTitle="Kids' & teens' fashion and gadgets"
+                image={images.aboutKid_Img}
+                paragraph1="Style starts young. Our kids and teens collection helps the next generation express themselves with confidence and comfort, from playful prints to trendy streetwear, with outfits that blend style, durability, and fun."
+                paragraph2="And because growing up is also about play, we stock the consoles, controllers, and toys they'll love. School days, weekends, and game nights: we've got them covered."
+                order="right"
+            />
+            <TestimonialSection sectionTitle="What families say" testimonials={TestimonialsKids} />
+            <HeroBanner />
+        </>
+    );
 }

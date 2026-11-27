@@ -4,8 +4,6 @@ import HomeNavbar from "../components/shared/HomeNavbar";
 import AboutCard from "../components/Homepage/AboutCard";
 import HeroSection from "../components/shared/HeroSection";
 import { ImageMenCarousel } from "../components/models/ImagesList";
-import TestimonialSection from "../components/Homepage/TestimonialSection";
-import { TestimonialsMale } from "../components/models/Testimonial";
 import CategorySection from "../components/Homepage/CategorySection";
 import { CategoryItemMen } from "../components/models/Category";
 import HeroBanner from "../components/shared/HeroBanner";
@@ -33,7 +31,6 @@ export default function Men() {
                 paragraph2="Modern men want versatility, from the office to the weekend without trading comfort for style. Whether you're into minimalism or layering textures and tones, we've got pieces that let you express yourself with ease."
                 order="right"
             />
-            <TestimonialSection sectionTitle="What customers say" testimonials={TestimonialsMale} />
             <HeroBanner />
         </>
     );

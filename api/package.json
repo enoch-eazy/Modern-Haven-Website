@@ -14,6 +14,7 @@
     "seed": "node scripts/seed.js",
     "seed:reset": "node scripts/seed.js --reset",
     "create-admin": "node scripts/createAdmin.js",
+    "email:preview": "node scripts/previewEmail.js",
     "test": "node --test --test-concurrency=1"
   },
   "dependencies": {
@@ -26,7 +27,8 @@
     "jsonwebtoken": "^9.0.3",
     "mongoose": "^8.24.11",
     "morgan": "^1.12.1",
-    "zod": "^3.25.76"
+    "nodemailer": "^10.6.1",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
     "mongodb-memory-server": "^11.4.0",

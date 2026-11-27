@@ -16,10 +16,20 @@ export const env = {
   jwtSecret: process.env.JWT_SECRET,
   jwtExpiresIn: process.env.JWT_EXPIRES_IN ?? "7d",
   corsOrigins: list(process.env.CORS_ORIGINS, "http://localhost:4000,http://localhost:3000"),
+  // Public storefront URL, used for links inside emails.
+  appUrl: (process.env.APP_URL ?? "http://localhost:4000").replace(/\/$/, ""),
+  mail: {
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT ?? 587),
+    user: process.env.SMTP_USER,
+    pass: process.env.SMTP_PASS,
+    from: process.env.MAIL_FROM ?? "Modern Haven <no-reply@modernhaven.local>",
+  },
 };
 
 export const isProduction = env.nodeEnv === "production";
 export const isTest = env.nodeEnv === "test";
+export const isMailConfigured = Boolean(env.mail.host && env.mail.user && env.mail.pass);
 
 export function assertRequiredEnv() {
   const missing = [];
@@ -30,5 +40,10 @@ export function assertRequiredEnv() {
   }
   if (isProduction && env.jwtSecret.length < 32) {
     throw new Error("JWT_SECRET must be at least 32 characters in production");
+  }
+  if (isProduction && !isMailConfigured) {
+    console.warn(
+      "SMTP_HOST / SMTP_USER / SMTP_PASS are not set: verification and password-reset emails cannot be sent.",
+    );
   }
 }

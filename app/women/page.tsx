@@ -4,8 +4,6 @@ import HomeNavbar from "../components/shared/HomeNavbar";
 import AboutCard from "../components/Homepage/AboutCard";
 import HeroSection from "../components/shared/HeroSection";
 import { ImageWomenCarousel } from "../components/models/ImagesList";
-import TestimonialSection from "../components/Homepage/TestimonialSection";
-import { TestimonialsWomen } from "../components/models/Testimonial";
 import CategorySection from "../components/Homepage/CategorySection";
 import { CategoryItemWomen } from "../components/models/Category";
 import HeroBanner from "../components/shared/HeroBanner";
@@ -33,7 +31,6 @@ export default function Women() {
                 paragraph2="From flowing dresses and sharp blazers to everyday essentials and standout accessories, we blend comfort with sophistication. Redefining your style or elevating your wardrobe, we've got fashion that speaks your language."
                 order="right"
             />
-            <TestimonialSection sectionTitle="What customers say" testimonials={TestimonialsWomen} />
             <HeroBanner />
         </>
     );

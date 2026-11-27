@@ -24,10 +24,6 @@ import categoryImagesjerseys from "./images/categoryMenJersey.jpg";
 import categoryMenWatch from "./images/categoryMenWatch.jpg";
 import categoryImagesshirts from "./images/categoryMenShirt.jpg";
 import aboutImage from "./images/aboutMen_Img.jpg";
-import testimonialImage1 from "./images/testimonial_Img.jpg";
-import testimonialImage2 from "./images/testimonial2_Img.jpg";
-import testimonialImage3 from "./images/testimonial3_Img.jpg";
-import testimonialImage4 from "./images/testimonail4_Img.jpg";
 import man from "./images/man.svg";
 
 
@@ -40,10 +36,6 @@ import Costume_Img from "./images/costume_Img.jpg";
 import Background_Img from "./images/background_Img.jpg";
 import Fun_Img from "./images/fun_Img.jpg";
 import aboutKid_Img from "./images/aboutGame_Img.jpg";
-import teenTestimony1 from "./images/teenTestimony1.jpg";
-import teenTestimony2 from "./images/teenTestimony2.jpg";
-import teenTestimony3 from "./images/teenTestimony3.jpg";
-import teenTestimony4 from "./images/teenTestimony4.jpg";
 import categoryTeenGames from "./images/categoryTeensPlaystation.jpg";
 import categoryTeenToy from "./images/categoryTeensToy.jpg";
 import categoryTeenSneaker from "./images/categoryTeensSneaker.jpg";
@@ -53,10 +45,6 @@ import categoryTeenTrouser from "./images/categoryTeensTrouser.jpg";
 
 // Women Section 
 import WomenFashion from "./images/womenfashion_Img.jpg";
-import TestimonialImage1 from "./images/testimonialWomen_Img1.jpg";
-import TestimonialImage2 from "./images/testimonialWomen_Img2.jpg";
-import TestimonialImage3 from "./images/testimonialWomen_Img3.jpg";
-import TestimonialImage4 from "./images/teenTestimony4.jpg";
 import WomenHero_Img1 from "./images/womenHeroSection_Img1.jpg";
 import WomenHero_Img2 from "./images/womenHeroSection_Img2.jpg";
 import WomenHero_Img3 from "./images/womenHeroSection_Img3.jpg";
@@ -106,10 +94,6 @@ export default {
     categoryMenWatch,
     categoryImagesshirts,
     aboutImage,
-    testimonialImage1,
-    testimonialImage2,
-    testimonialImage3,
-    testimonialImage4,
     man,
     Playstation,
     Toy_Img,
@@ -120,14 +104,6 @@ export default {
     Fun_Img,
     WomenFashion,
     aboutKid_Img,
-    TestimonialImage1,
-    TestimonialImage2,
-    TestimonialImage3,
-    TestimonialImage4,
-    teenTestimony1,
-    teenTestimony2,
-    teenTestimony3,
-    teenTestimony4,
     Accessory,
     Games,
     Sports,

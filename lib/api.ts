@@ -62,16 +62,35 @@ export interface ApiUser {
     email: string;
     phoneNumber?: string;
     role: "customer" | "admin";
+    emailVerified: boolean;
 }
+
+/** Login error that means "right password, but the email isn't verified yet". */
+export const EMAIL_NOT_VERIFIED = "EMAIL_NOT_VERIFIED";
+
+/** Stable error codes the API sends alongside some errors. */
+export type ApiErrorCode =
+    | "EMAIL_NOT_VERIFIED"
+    | "ALREADY_VERIFIED"
+    | "OTP_INVALID"
+    | "OTP_EXPIRED"
+    | "OTP_COOLDOWN";
 
 export class ApiError extends Error {
     constructor(
         public status: number,
         message: string,
         public details?: Record<string, string[]>,
+        public code?: ApiErrorCode,
     ) {
         super(message);
     }
+}
+
+/** Turns an ApiError's per-field details into `{ field: firstMessage }`. */
+export function fieldErrors(error: unknown): Record<string, string> {
+    if (!(error instanceof ApiError) || !error.details) return {};
+    return Object.fromEntries(Object.entries(error.details).map(([key, messages]) => [key, messages[0]]));
 }
 
 type ApiInit = RequestInit & { token?: string; next?: { revalidate?: number } };
@@ -90,6 +109,6 @@ export async function apiFetch<T>(path: string, { token, ...init }: ApiInit = {}
 
     if (res.status === 204) return undefined as T;
     const body = await res.json().catch(() => ({}));
-    if (!res.ok) throw new ApiError(res.status, body.error ?? "Something went wrong", body.details);
+    if (!res.ok) throw new ApiError(res.status, body.error ?? "Something went wrong", body.details, body.code);
     return body as T;
 }

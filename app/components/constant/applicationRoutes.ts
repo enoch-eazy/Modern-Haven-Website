@@ -7,6 +7,9 @@ export class ApplicationRoutes {
     static readonly Contact = "/contact";
     static readonly SignUp = "/signup";
     static readonly Login = "/login";
+    static readonly VerifyEmail = "/verify-email";
+    static readonly ForgotPassword = "/forgot-password";
+    static readonly ResetPassword = "/reset-password";
     static readonly Shop = "/shop";
     static readonly Gadgets = "/shop?category=gadgets";
     static readonly Clothing = "/shop?category=clothing";

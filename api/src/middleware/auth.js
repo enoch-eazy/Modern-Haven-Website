@@ -23,8 +23,12 @@ export async function requireAuth(req, _res, next) {
   }
 
   // Load the user on every request so role changes and deleted accounts take effect immediately.
-  const user = await User.findById(payload.sub);
+  const user = await User.findById(payload.sub).select("+passwordChangedAt");
   if (!user) throw unauthorized("Account no longer exists");
+  // Tokens issued before the latest password reset are no longer valid.
+  if (user.passwordChangedAt && payload.iat < Math.floor(user.passwordChangedAt.getTime() / 1000)) {
+    throw unauthorized("Your session has expired. Please log in again.");
+  }
   req.user = user;
   next();
 }

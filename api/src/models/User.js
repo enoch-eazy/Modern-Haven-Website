@@ -11,6 +11,11 @@ const userSchema = new mongoose.Schema(
     phoneNumber: { type: String, trim: true, maxlength: 20 },
     passwordHash: { type: String, required: true, select: false },
     role: { type: String, enum: ROLES, default: "customer" },
+    // Defaults to true so accounts created before email verification existed (and admins made
+    // with `npm run create-admin`) keep working. Self-service sign-ups set it to false explicitly.
+    emailVerified: { type: Boolean, default: true },
+    // Tokens issued before this moment are rejected, so a password reset signs out other devices.
+    passwordChangedAt: { type: Date, select: false },
   },
   {
     timestamps: true,
@@ -20,6 +25,7 @@ const userSchema = new mongoose.Schema(
         delete ret._id;
         delete ret.__v;
         delete ret.passwordHash;
+        delete ret.passwordChangedAt;
         return ret;
       },
     },

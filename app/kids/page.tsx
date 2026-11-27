@@ -4,8 +4,6 @@ import HomeNavbar from "../components/shared/HomeNavbar";
 import AboutCard from "../components/Homepage/AboutCard";
 import HeroSection from "../components/shared/HeroSection";
 import { ImageKidsCarousel } from "../components/models/ImagesList";
-import TestimonialSection from "../components/Homepage/TestimonialSection";
-import { TestimonialsKids } from "../components/models/Testimonial";
 import CategorySection from "../components/Homepage/CategorySection";
 import { CategoryItemKids } from "../components/models/Category";
 import HeroBanner from "../components/shared/HeroBanner";
@@ -33,7 +31,6 @@ export default function Kids() {
                 paragraph2="And because growing up is also about play, we stock the consoles, controllers, and toys they'll love. School days, weekends, and game nights: we've got them covered."
                 order="right"
             />
-            <TestimonialSection sectionTitle="What families say" testimonials={TestimonialsKids} />
             <HeroBanner />
         </>
     );

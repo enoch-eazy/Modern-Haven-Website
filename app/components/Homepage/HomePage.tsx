@@ -5,7 +5,6 @@ import FeaturedProducts from "./FeaturedProducts";
 import AboutSection from "./AboutSection";
 import Category from "./Category";
 import NewArrivals from "./NewArrivals";
-import Testimonial from "./Testimonial";
 import HeroBanner from "../shared/HeroBanner";
 
 export default function HomePage() {
@@ -18,7 +17,6 @@ export default function HomePage() {
             <NewArrivals />
             <AboutSection />
             <Category />
-            <Testimonial />
             <HeroBanner />
         </>
     );

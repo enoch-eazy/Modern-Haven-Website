@@ -22,6 +22,7 @@ npm run dev               # http://localhost:5000
 | `npm run seed` | Add any missing delivery zones and starter products |
 | `npm run seed:reset` | **Delete all** products and delivery zones, then seed |
 | `npm run create-admin` | Create an admin, or promote an existing account |
+| `npm run email:preview` | Write the verification / reset emails to `api/email-preview-*.html` to view in a browser |
 
 ## Environment
 
@@ -32,16 +33,30 @@ npm run dev               # http://localhost:5000
 | `JWT_EXPIRES_IN` | no | Default `7d`. Keep in sync with the storefront session length |
 | `PORT` | no | Default `5000` |
 | `CORS_ORIGINS` | no | Comma-separated sites allowed to call the API from a browser |
+| `APP_URL` | no | Storefront URL, used for links in emails |
+| `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASS` | in production | Any SMTP provider (Gmail app password, Brevo, Resend, Mailgun…). Port 465 uses TLS, others STARTTLS |
+| `MAIL_FROM` | no | e.g. `Modern Haven <no-reply@yourdomain.com>` |
+
+Without SMTP settings, emails are printed to the console in development, and in production the
+endpoints that send email answer 503, so sign-ups can't complete until SMTP is configured.
 
 ## Endpoints
 
 Send `Authorization: Bearer <token>` for anything marked 🔒 (logged in) or 🛡️ (admin).
 Errors look like `{ "error": "message", "details": { "field": ["problem"] } }`.
 
-**Auth**
-- `POST /api/auth/register`: `{ firstName, lastName, email, phoneNumber?, password }` → `{ user, token }`
-- `POST /api/auth/login`: `{ email, password }` → `{ user, token }`
+**Auth**: new accounts must confirm their email with a 6-digit code before they can log in.
+Codes are emailed, expire after 10 minutes, allow 5 guesses, and can be re-sent every 60 seconds.
+Some errors carry a `code` field to branch on: `EMAIL_NOT_VERIFIED`, `ALREADY_VERIFIED`, `OTP_INVALID`, `OTP_EXPIRED`, `OTP_COOLDOWN`.
+- `POST /api/auth/register`: `{ firstName, lastName, email, phoneNumber?, password }` → `201 { email, verificationRequired: true }` and emails a code. Registering an email that isn't verified yet updates that account and re-sends the code
+- `POST /api/auth/verify-email`: `{ email, code }` → `{ user, token }`
+- `POST /api/auth/resend-verification`: `{ email }`
+- `POST /api/auth/login`: `{ email, password }` → `{ user, token }`, or `403 EMAIL_NOT_VERIFIED`
+- `POST /api/auth/forgot-password`: `{ email }` emails a reset code (same response whether or not the account exists)
+- `POST /api/auth/reset-password`: `{ email, code, password }`. Also marks the email verified and invalidates tokens issued before the reset
 - 🔒 `GET /api/auth/me`
+
+Accounts created before email verification existed, and admins from `create-admin`, count as verified.
 
 **Products**
 - `GET /api/products`: filters `category` (`gadgets`|`clothing`), `audience` (`men`|`women`|`kids`|`unisex`), `subcategory`, `q`, `featured`, `minPrice`, `maxPrice`, `sort` (`newest`|`price-asc`|`price-desc`|`name`), `page`, `limit`
@@ -68,6 +83,11 @@ Errors look like `{ "error": "message", "details": { "field": ["problem"] } }`.
 
 ## Deploying
 
-Any Node 20+ host works (Render, Railway, Fly.io, a VPS). Set the environment variables above,
+**Vercel** (current setup): a separate Vercel project with `api` as its root directory. `api/index.js` is the
+serverless entry and `vercel.json` routes every path to it. From this folder: `vercel --prod`.
+Set the environment variables above in that project (`NODE_ENV=production`), and in MongoDB Atlas allow
+access from anywhere (`0.0.0.0/0`), since Vercel has no fixed IPs.
+
+Otherwise any Node 20+ host works (Render, Railway, Fly.io, a VPS). Set the environment variables above,
 use `npm start` as the start command and `api` as the root directory, and add your storefront's URL to `CORS_ORIGINS`.
 A free MongoDB Atlas cluster is enough to start.

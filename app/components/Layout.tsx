@@ -15,7 +15,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </a>
             <Toaster position="bottom-center" richColors closeButton toastOptions={{ duration: 3500 }} />
             <Navbar />
-            <main id="main" className="flex-1">
+            {/* overflow-x-clip: decorative glows and bleed images must never cause sideways scrolling on phones. */}
+            <main id="main" className="flex-1 overflow-x-clip">
                 {children}
             </main>
             <Footer />

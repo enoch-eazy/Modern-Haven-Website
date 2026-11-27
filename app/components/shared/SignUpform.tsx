@@ -2,10 +2,9 @@
 
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
-import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { toast } from "sonner";
-import { ApiError, apiFetch } from "@/lib/api";
+import { ApiError, apiFetch, fieldErrors } from "@/lib/api";
 import { buttonClasses } from "@/app/ui/button";
 import AuthShell from "./AuthShell";
 import PasswordInput from "./PasswordInput";
@@ -46,30 +45,29 @@ export default function SignUpForm() {
         if (!validate()) return;
         setLoading(true);
         try {
-            await apiFetch("/api/auth/register", {
+            const { email } = await apiFetch<{ email: string }>("/api/auth/register", {
                 method: "POST",
                 body: JSON.stringify({
-                    firstName: form.firstName,
-                    lastName: form.lastName,
-                    email: form.email,
+                    firstName: form.firstName.trim(),
+                    lastName: form.lastName.trim(),
+                    email: form.email.trim(),
                     phoneNumber: form.phoneNumber,
                     password: form.password,
                 }),
             });
-            const result = await signIn("credentials", { email: form.email, password: form.password, redirect: false });
-            toast.success("Welcome to Modern Haven!");
-            if (result?.error) {
-                router.push("/login");
-                return;
-            }
-            router.push(callbackUrl);
-            router.refresh();
+            toast.success("Account created. Check your email for a verification code.");
+            const query = new URLSearchParams({ email });
+            if (callbackUrl !== "/") query.set("callbackUrl", callbackUrl);
+            router.push(`/verify-email?${query}`);
         } catch (error) {
-            if (error instanceof ApiError && error.details) {
-                setErrors(Object.fromEntries(Object.entries(error.details).map(([key, messages]) => [key, messages[0]])));
-            }
-            setFormError(error instanceof Error ? error.message : "We couldn't create your account");
-        } finally {
+            setErrors(fieldErrors(error));
+            setFormError(
+                error instanceof ApiError && error.status === 409
+                    ? "An account with that email already exists. Log in instead, or reset your password."
+                    : error instanceof Error
+                      ? error.message
+                      : "We couldn't create your account",
+            );
             setLoading(false);
         }
     };
@@ -95,6 +93,7 @@ export default function SignUpForm() {
         >
             <form onSubmit={submit} noValidate className="space-y-5">
                 {formError && <p role="alert" className="rounded-xl bg-red-50 px-4 py-3 text-sm text-red-700 ring-1 ring-red-200">{formError}</p>}
+                <p className="text-sm text-gray-500">We&apos;ll email you a 6-digit code to confirm your address.</p>
                 <div className="grid gap-5 sm:grid-cols-2">
                     {field("firstName", "First name", { autoComplete: "given-name" })}
                     {field("lastName", "Last name", { autoComplete: "family-name" })}

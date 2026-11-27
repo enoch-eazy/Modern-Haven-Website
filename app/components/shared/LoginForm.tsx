@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
+import { toast } from "sonner";
+import { EMAIL_NOT_VERIFIED } from "@/lib/api";
 import { buttonClasses } from "@/app/ui/button";
 import AuthShell from "./AuthShell";
 import PasswordInput from "./PasswordInput";
@@ -29,6 +31,14 @@ export default function LoginForm() {
         event.preventDefault();
         setLoading(true);
         const result = await signIn("credentials", { email: form.email, password: form.password, redirect: false });
+        if (result?.error === EMAIL_NOT_VERIFIED) {
+            // Correct password, but the email was never confirmed: send a fresh code and finish that step.
+            const query = new URLSearchParams({ email: form.email.trim().toLowerCase(), resend: "1" });
+            if (callbackUrl !== "/") query.set("callbackUrl", callbackUrl);
+            toast.info("Please verify your email first. We've sent you a new code.");
+            router.push(`/verify-email?${query}`);
+            return;
+        }
         setLoading(false);
         if (result?.error) {
             setError(result.error === "CredentialsSignin" ? "Incorrect email or password." : result.error);
@@ -52,15 +62,20 @@ export default function LoginForm() {
                     <input id="email" name="email" type="email" required autoComplete="email" value={form.email} onChange={update} placeholder="you@example.com" className="input-field" />
                 </div>
                 <div>
-                    <label htmlFor="password" className="mb-1.5 block text-sm font-medium text-gray-800">Password</label>
+                    <div className="mb-1.5 flex items-baseline justify-between gap-4">
+                        <label htmlFor="password" className="block text-sm font-medium text-gray-800">Password</label>
+                        <Link
+                            href={form.email ? `/forgot-password?email=${encodeURIComponent(form.email.trim())}` : "/forgot-password"}
+                            className="text-sm font-semibold text-brand-700 hover:underline"
+                        >
+                            Forgot password?
+                        </Link>
+                    </div>
                     <PasswordInput id="password" name="password" required autoComplete="current-password" value={form.password} onChange={update} placeholder="Your password" />
                 </div>
                 <button type="submit" disabled={loading} className={buttonClasses({ size: "lg", className: "w-full" })}>
                     {loading ? "Logging in…" : "Log in"}
                 </button>
-                <p className="text-center text-sm text-gray-500">
-                    Forgot your password? <Link href="/contact" className="font-semibold text-brand-700 hover:underline">Contact us</Link> and we&apos;ll help.
-                </p>
             </form>
         </AuthShell>
     );
